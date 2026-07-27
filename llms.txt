@@ -1,0 +1,76 @@
+# Devin Frank Live - For LLMs
+
+## Brand Overview
+- **Name**: Devin Frank Live
+- **Domain**: https://devinfranklive.com
+- **Business Type**: Solo live music performer
+- **Parent Company**: Frank Creations LLC
+- **Instruments**: Piano and acoustic guitar (not simultaneously)
+- **Contact**: mockingbirddevin@gmail.com
+
+## Service Description
+Devin Frank provides live piano and acoustic guitar performances shaped around the space and audience. Each performance is adaptable—ranging from relaxed background music to interactive, audience-friendly sets.
+
+## Service Categories
+- Restaurants & Wineries
+- Weddings & Special Events
+- Churches & Faith-Based Events
+- Festivals & Community Events
+- Private Events
+- Corporate & Nonprofit Gatherings
+
+## Geographic Service Area
+- **Primary**: Northwest Ohio (Findlay, Lima, Tiffin, Fremont, Fostoria, Clyde, surrounding communities)
+- **Secondary**: Nearby Southeast Michigan events considered by arrangement
+
+## Key Brand Attributes
+- Professional sound equipment included
+- Compact, flexible setup
+- Volume matched to venue and event type
+- Reliable, prepared performances
+- Familiar, accessible repertoire
+- Thoughtful about energy and pacing
+
+## Pricing
+Pricing is customized based on:
+- Event date
+- Location
+- Performance duration
+- Production needs
+- Event type
+
+No standard rate quote available publicly; pricing provided upon inquiry.
+
+## Repertoire Highlights
+Piano and acoustic guitar across:
+- 50s–2000s+ music
+- Pop, rock, country, soul, folk
+- Ballads and sing-alongs
+- Classics and contemporary favorites
+- Church/worship-appropriate selections
+
+Notable songs: Piano Man, Imagine, Hey Jude, Fast Car, Hotel California, Country Roads, Wagon Wheel, Hang On Sloopy, Don't Stop Believin', and 22+ others.
+
+## What to Know
+- Devin performs on one instrument per song, not both simultaneously
+- Solo performer; no band or backup musicians
+- Professional background music or featured performance—both available
+- Special songs can be learned in advance when arranged ahead
+- No DJ services; live performance only
+- Does not invent or exaggerate credentials, testimonials, or booking stats
+
+## Contact Methods
+- Email: mockingbirddevin@gmail.com
+- Website: https://devinfranklive.com
+- Contact form available at /contact.html
+
+## Related Brand
+- Frank Creations LLC (parent company; not the focus of this site)
+- A Change of Plans (separate duo; not the focus of this site)
+
+## Website Structure
+- 10 public pages (Home, About, Book, Restaurants & Wineries, Weddings, Churches, Festivals, Song List, Shows, Contact)
+- Fully static HTML/CSS/JavaScript
+- Responsive mobile-first design
+- Accessibility-focused (WCAG AA)
+- Fast performance (no heavy dependencies)

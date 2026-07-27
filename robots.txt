@@ -1,0 +1,8 @@
+# robots.txt for Devin Frank Live
+# https://devinfranklive.com/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /images/placeholder/
+
+Sitemap: https://devinfranklive.com/sitemap.xml

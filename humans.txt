@@ -1,0 +1,26 @@
+# Devin Frank Live - Website Credits
+
+## Built For
+Devin Frank
+Frank Creations LLC
+https://devinfranklive.com
+
+## Purpose
+Premium live music brand website for a solo pianist and acoustic guitarist serving Northwest Ohio and nearby Southeast Michigan.
+
+## Design & Development
+- HTML, CSS, JavaScript (static site)
+- Responsive mobile-first design
+- Accessibility-focused (WCAG AA)
+- Performance-optimized
+
+## Contact
+For inquiries about booking Devin Frank for live music:
+Email: mockingbirddevin@gmail.com
+
+## Last Updated
+January 2024
+
+---
+
+This website is a clean, modern presentation of Devin Frank Live's services and music. It's designed to be fast, accessible, and professional—reflecting the quality and care Devin brings to every performance.

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Devin Frank Live to inquire about booking for your event or venue. Piano and acoustic guitar for weddings, restaurants, churches, and community events.">
+  <meta name="theme-color" content="#1a1a1a">
+  
+  <link rel="canonical" href="https://devinfranklive.com/contact.html">
+  
+  <meta property="og:title" content="Contact - Devin Frank Live">
+  <meta property="og:description" content="Get in touch to book Devin for your event or learn more about live music services.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://devinfranklive.com/contact.html">
+  
+  <title>Contact - Devin Frank Live</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='90' font-family='serif' font-weight='bold' fill='%23d4a574'>♪</text></svg>">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://devinfranklive.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://devinfranklive.com/contact.html"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo">Devin Frank Live</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="book.html">Book</a></li>
+          <li><a href="songs.html">Songs</a></li>
+          <li><a href="shows.html">Shows</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main id="main-content">
+    <section class="container" style="margin-top: var(--spacing-xl);">
+      <h1>Get in Touch</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-lg);">
+        Interested in booking Devin? Have questions? Use the form below or reach out directly by email.
+      </p>
+    </section>
+    
+    <section class="container" style="max-width: 700px; margin: 0 auto;">
+      <div id="form-message"></div>
+      
+      <form id="contact-form" action="https://formspree.io/f/xyzpqrst" method="POST">
+        <!-- Honeypot field -->
+        <input type="text" name="website" style="display: none;" tabindex="-1">
+        
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        
+        <div class="form-group">
+          <label for="event-date">Event Date *</label>
+          <input type="date" id="event-date" name="event-date" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="venue">Venue or Location *</label>
+          <input type="text" id="venue" name="venue" placeholder="e.g., The Iron Tavern, Findlay, OH" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="event-type">Event Type *</label>
+          <select id="event-type" name="event-type" required>
+            <option value="">-- Select Event Type --</option>
+            <option value="Restaurant/Bar">Restaurant or Bar</option>
+            <option value="Winery">Winery or Tasting Room</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Private Event">Private Event</option>
+            <option value="Church">Church</option>
+            <option value="Festival/Community Event">Festival or Community Event</option>
+            <option value="Corporate">Corporate Event</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="performance-length">Approximate Performance Length *</label>
+          <select id="performance-length" name="performance-length" required>
+            <option value="">-- Select Duration --</option>
+            <option value="30 minutes">30 minutes</option>
+            <option value="1 hour">1 hour</option>
+            <option value="2 hours">2 hours</option>
+            <option value="3+ hours">3+ hours</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="indoor-outdoor">Indoor or Outdoor? *</label>
+          <select id="indoor-outdoor" name="indoor-outdoor" required>
+            <option value="">-- Select --</option>
+            <option value="Indoor">Indoor</option>
+            <option value="Outdoor">Outdoor</option>
+            <option value="Both/Combination">Both/Combination</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="attendance">Estimated Attendance</label>
+          <input type="text" id="attendance" name="attendance" placeholder="e.g., 50 people, 200+">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" placeholder="Tell Devin about your event, any special requests, or questions you have..." required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+      </form>
+      
+      <hr style="border: none; border-top: 1px solid var(--color-border); margin: var(--spacing-xl) 0;">
+      
+      <div style="text-align: center;">
+        <h3>Direct Email</h3>
+        <p style="margin-top: var(--spacing-md);">
+          <a href="mailto:mockingbirddevin@gmail.com" style="font-size: 1.1rem;">mockingbirddevin@gmail.com</a>
+        </p>
+        <p style="color: var(--color-text-secondary); margin-top: var(--spacing-md);">
+          You can also reach out directly by email if you prefer.
+        </p>
+      </div>
+    </section>
+    
+    <section class="container" style="background-color: rgba(212, 165, 116, 0.05); padding: var(--spacing-xl) var(--spacing-lg); border-radius: var(--border-radius); margin: 0 var(--spacing-lg);">
+      <h2>What to Expect</h2>
+      <p>
+        After you submit your inquiry, Devin will review the details and reach out within 2 business days to discuss your event and explore availability.
+      </p>
+      <p style="margin-top: var(--spacing-md);">
+        <strong>Important:</strong> No date is held until a booking is confirmed. The first step is a conversation to understand your needs and check calendar availability.
+      </p>
+    </section>
+    
+    <section class="container">
+      <h2>Service Area</h2>
+      <p>
+        <strong>Primary:</strong> Northwest Ohio, including Findlay, Lima, Tiffin, Fremont, Fostoria, Clyde, and surrounding communities.
+      </p>
+      <p>
+        <strong>Considered:</strong> Nearby Southeast Michigan events based on date and location.
+      </p>
+      <p>
+        Outside the primary area? Reach out anyway—special arrangements may be possible.
+      </p>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Devin</a></li>
+            <li><a href="book.html">Book an Event</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="restaurants-wineries.html">Restaurants & Wineries</a></li>
+            <li><a href="weddings.html">Weddings</a></li>
+            <li><a href="churches.html">Churches</a></li>
+            <li><a href="festivals.html">Festivals & Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Music</h3>
+          <ul>
+            <li><a href="songs.html">Song List</a></li>
+            <li><a href="shows.html">Shows</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: <a href="mailto:mockingbirddevin@gmail.com">mockingbirddevin@gmail.com</a></li>
+            <li style="margin-top: var(--spacing-md); color: var(--color-text-secondary); font-size: 0.9rem;">Frank Creations LLC</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2024 Devin Frank Live. All rights reserved.</div>
+      </div>
+      <div class="footer-credit">
+        <p style="color: var(--color-text-secondary); font-size: 0.85rem;">Built for Devin Frank Live</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

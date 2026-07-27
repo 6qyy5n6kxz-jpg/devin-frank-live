@@ -1,0 +1,33 @@
+{
+  "name": "Devin Frank Live",
+  "short_name": "Devin Frank",
+  "description": "Piano and acoustic guitar for weddings, restaurants, churches, and events across Northwest Ohio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#d4a574",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><text y='160' font-size='160' font-family='serif' font-weight='bold' fill='%23d4a574'>♪</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><text y='160' font-size='160' font-family='serif' font-weight='bold' fill='%23d4a574'>♪</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["music"],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%231a1a1a' width='540' height='720'/><text x='270' y='360' font-size='80' font-family='serif' font-weight='bold' fill='%23d4a574' text-anchor='middle'>♪</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ]
+}
