@@ -1,6 +1,9 @@
 # Devin Frank Live - Website
 
-A production-ready static website for Devin Frank Live, a solo live music brand featuring piano and acoustic guitar performances for weddings, restaurants, churches, and events across Northwest Ohio.
+A production-ready static website for Devin Frank Live, featuring:
+- **Live music booking**: Piano and acoustic guitar for weddings, restaurants, churches, and events across Northwest Ohio
+- **Field Notes**: Practical, experience-based articles about live performance, gear, and music business
+- **Gear directory**: Real-world documentation of equipment used in a working musician's setup
 
 ## Overview
 
@@ -8,41 +11,57 @@ A production-ready static website for Devin Frank Live, a solo live music brand 
 - **Performance**: Fast, fully responsive, accessibility-focused
 - **Hosting**: Designed for Cloudflare Pages (works anywhere)
 - **Design**: Premium, warm aesthetic with dark charcoal base and gold accents
+- **Content**: Data-driven architecture for articles, gear, and events
 
 ## Project Structure
 
 ```
 devinfranklive/
-├── index.html                      # Homepage
-├── about.html                      # About Devin
-├── book.html                       # Booking overview
-├── restaurants-wineries.html       # Restaurants & wineries service page
-├── weddings.html                   # Weddings service page
-├── churches.html                   # Churches service page
-├── festivals.html                  # Festivals & community events service page
-├── songs.html                      # Searchable song list
-├── shows.html                      # Upcoming events
-├── contact.html                    # Contact form
-├── 404.html                        # 404 error page
+├── index.html                           # Homepage (updated with Field Notes, Gear, newsletter)
+├── about.html                           # About (working musician + content creator positioning)
+├── hire-devin.html                      # Booking overview (formerly book.html)
+├── gear.html                            # Gear directory with filtering
+├── disclosures.html                     # Privacy, affiliate, editorial policies
+│
+├── field-notes/                         # Field Notes articles
+│   ├── index.html                       # Archive page with search & filters
+│   ├── feed.xml                         # RSS feed for articles
+│   ├── building-practical-solo-rig.html       # Article: Solo rig setup
+│   ├── why-i-chose-numa-x-piano.html         # Article: Keyboard review
+│   └── restaurant-gigs-taught-volume.html    # Article: Volume lessons
+│
+├── restaurants-wineries.html            # Restaurants & wineries service page
+├── weddings.html                        # Weddings service page
+├── churches.html                        # Churches service page
+├── festivals.html                       # Festivals & community events service page
+├── songs.html                           # Searchable song list
+├── shows.html                           # Upcoming events
+├── contact.html                         # Contact form
+├── 404.html                             # 404 error page
 │
 ├── css/
-│   └── styles.css                  # Main stylesheet
+│   └── styles.css                       # Main stylesheet
 │
 ├── js/
-│   ├── main.js                     # Core functionality (menu, forms, events)
-│   └── songs.js                    # Song list rendering & filtering
+│   ├── main.js                          # Core functionality (menu, forms, events, rendering)
+│   └── songs.js                         # Song list rendering & filtering
 │
 ├── data/
-│   ├── songs.js                    # Song repertoire data (EDIT THIS)
-│   └── events.js                   # Upcoming events data (EDIT THIS)
+│   ├── articles.js                      # Field Notes metadata (EDIT THIS)
+│   ├── gear.js                          # Gear directory data (EDIT THIS)
+│   ├── currently-working-on.js          # Homepage "Currently Working On" items (EDIT THIS)
+│   ├── songs.js                         # Song repertoire data (EDIT THIS)
+│   └── events.js                        # Upcoming events data (EDIT THIS)
 │
-├── manifest.json                   # Web app manifest
-├── robots.txt                      # SEO robots file
-├── sitemap.xml                     # XML sitemap for search engines
-├── llms.txt                        # LLM-readable brand info
-├── humans.txt                      # Website credits
+├── images/                              # Images folder (for real photos when added)
 │
-└── README.md                       # This file
+├── manifest.json                        # Web app manifest
+├── robots.txt                           # SEO robots file
+├── sitemap.xml                          # XML sitemap for search engines
+├── llms.txt                             # LLM-readable brand info
+├── humans.txt                           # Website credits
+│
+└── README.md                            # This file
 ```
 
 ## Quick Start
@@ -66,6 +85,102 @@ devinfranklive/
 - Test on mobile with browser dev tools (F12 → toggle device toolbar)
 
 ## Editing the Site
+
+### Field Notes (Articles)
+Edit or add articles in `data/articles.js`:
+```javascript
+const articles = [
+  {
+    id: "building-practical-solo-rig",
+    slug: "building-practical-solo-rig",
+    title: "Building a Practical Solo Rig: From Simplest Setup to Recommended Configuration",
+    excerpt: "Step-by-step guide to building a portable, reliable rig for solo performances.",
+    description: "How to build a solo musician rig from basics to professional setup.",
+    category: "Live Performance",
+    subcategories: ["Solo Performer", "Equipment"],
+    featured_image: "placeholder",
+    author: "Devin Frank",
+    publication_date: "2025-01-15",
+    updated_date: "2025-01-15",
+    reading_time: 8,
+    keywords: ["rig", "setup", "portable", "mixer", "speakers"],
+    related_gear: ["numa-x-piano-73", "allen-heath-cq-20b", "ev-evolve-50m"],
+    related_articles: ["why-i-chose-numa-x-piano"],
+    preview_html: "field-notes/building-practical-solo-rig.html"
+  }
+  // Add more articles here
+];
+```
+
+**To add a new article**:
+1. Create the HTML file in `field-notes/` folder with semantic markup and metadata
+2. Add an entry to the `articles` array in `data/articles.js` with unique `id` and `slug`
+3. Set `preview_html` to the file path
+4. Update `sitemap.xml` with the new article URL
+5. Update `field-notes/feed.xml` with RSS entry (optional, but recommended)
+
+**Article structure**:
+- Each article should have proper semantic HTML, meta tags, and Open Graph markup
+- Include author byline, publication date, reading time
+- Add related articles and gear references
+- Include CTA section and newsletter signup
+- Use proper heading hierarchy (h1, h2, h3)
+
+### Gear Directory
+Edit the gear in `data/gear.js`:
+```javascript
+const gear = [
+  {
+    id: "numa-x-piano-73",
+    name: "Studiologic Numa X Piano 73",
+    brand: "Studiologic",
+    category: "Keyboard",  // Options: Keyboard, Mixer, Speaker, Guitar, Software, Effects & Controllers, Audio Tools, Monitor, Backing Tracks
+    status: "current",     // Options: "current" or "evaluating"
+    image: "placeholder",
+    summary: "Professional 73-key weighted keyboard with excellent piano sounds and organ capabilities.",
+    why_i_use_it: "Best-in-class piano sound, compact 73-key size, solid build quality, great connectivity.",
+    best_use_case: "Primary instrument for solo piano-based performances.",
+    what_i_like: "Piano quality, organ palette, portability, MIDI integration, feel",
+    what_i_would_improve: "Lighter carrying case, more preset slots, direct USB audio",
+    related_articles: ["why-i-chose-numa-x-piano", "building-practical-solo-rig"],
+    manufacturer_url: "https://www.studiologic-music.com/",
+    affiliate_url: null,       // Add URL if you have affiliate link
+    affiliate_disclosure: false,
+    sponsored: false
+  }
+  // Add more gear items here
+];
+```
+
+**Categories**:
+- Keyboard
+- Mixer
+- Speaker
+- Guitar
+- Software
+- Effects & Controllers
+- Audio Tools
+- Monitor
+- Backing Tracks
+
+**Status options**: "current" (in active use) or "evaluating" (still testing)
+
+### Currently Working On
+Edit active projects in `data/currently-working-on.js`:
+```javascript
+const currentlyWorkingOn = [
+  {
+    id: 1,
+    title: "Building MIDI-controlled live rig",
+    description: "Integrating MIDI controllers for seamless switching between keyboard sounds and effects during performances.",
+    status: "in-progress",
+    category: "Equipment"
+  }
+  // Add or modify items here
+];
+```
+
+This section displays on the homepage to show active exploration and development.
 
 ### Songs
 Edit the song repertoire in `data/songs.js`:
@@ -122,10 +237,10 @@ Edit HTML directly:
 - **Service pages**: `restaurants-wineries.html`, `weddings.html`, `churches.html`, `festivals.html`
 - **Contact form**: `contact.html` – Update form action if using different service
 
-### Contact Form
+### Contact Form & Newsletter
 Currently uses **Formspree** for form submission.
 
-**To activate the form:**
+**To activate the contact form:**
 1. Go to https://formspree.io
 2. Create a new form with your email
 3. Replace the `action` attribute in `contact.html`:
@@ -133,7 +248,31 @@ Currently uses **Formspree** for form submission.
    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
    ```
 
+**To activate the newsletter:**
+The newsletter signup uses the same Formspree setup, but you may want a dedicated email service:
+- **Mailchimp**: Affordable, good for newsletters
+- **ConvertKit**: Writer-focused, great for content creators
+- **Substack**: Built for writers
+- **Brevo** (formerly Sendinblue): All-in-one marketing
+
+To connect to an email service:
+1. Create account and form on chosen service
+2. Update form `action` attribute in `index.html` (Follow the Journey section)
+3. Add any required hidden fields or data attributes
+
 Alternative services: Netlify Forms, Basin, or self-hosted solution.
+
+### RSS Feed
+Field Notes has an RSS feed at `/field-notes/feed.xml` for subscribers.
+
+**To update the RSS feed**:
+1. Edit `field-notes/feed.xml` manually when adding new articles
+2. Add new `<item>` entries with:
+   - Article `<title>`
+   - Link to the HTML file
+   - Publication date in RFC 2822 format
+   - Article excerpt/description
+   - Category tag
 
 ### Styling
 All styles are in `css/styles.css`. Key variables at the top:

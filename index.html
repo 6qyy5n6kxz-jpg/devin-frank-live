@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Devin Frank Live provides live piano and acoustic guitar music for restaurants, weddings, churches, and events across Northwest Ohio. Professional sound included, volume matched to your venue.">
-  <meta name="keywords" content="live music, piano, acoustic guitar, Ohio, weddings, events, restaurants">
+  <meta name="description" content="Working musician sharing real-world insights on live performance, music gear, sound, and the business of music.">
+  <meta name="keywords" content="live music, working musician, gear, sound, keyboards, performance, music business">
   <meta name="theme-color" content="#1a1a1a">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://devinfranklive.com/">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Devin Frank Live - Piano & Acoustic Guitar">
-  <meta property="og:description" content="Live music built around the room. Adaptable performances for restaurants, weddings, churches, and events across Northwest Ohio.">
+  <meta property="og:title" content="Devin Frank Live - Working Musician. Gear Enthusiast. Field Notes.">
+  <meta property="og:description" content="Working musician sharing what I learn about live performance, gear, sound, and music business.")
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://devinfranklive.com/">
   <meta property="og:image" content="https://devinfranklive.com/images/og-image.png">
@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Devin Frank Live - Piano & Acoustic Guitar">
   <meta name="twitter:description" content="Live music built around the room.">
   
-  <title>Devin Frank Live - Piano & Acoustic Guitar for Weddings & Events</title>
+  <title>Devin Frank Live - Working Musician</title>
   <link rel="stylesheet" href="css/styles.css">
   
   <!-- Favicon and web app manifest -->
@@ -60,10 +60,12 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="book.html">Book</a></li>
-          <li><a href="songs.html">Songs</a></li>
+          <li><a href="field-notes/">Field Notes</a></li>
+          <li><a href="gear.html">Gear</a></li>
           <li><a href="shows.html">Shows</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="songs.html">Song List</a></li>
+          <li><a href="hire-devin.html">Hire Devin</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -74,16 +76,26 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <div class="hero-label">Piano · Acoustic Guitar · Vocals</div>
-        <h1>Live music built around the room.</h1>
+        <div class="hero-label">Devin Frank Live</div>
+        <h1>Working musician. Gear enthusiast. Sharing what I learn along the way.</h1>
         <p>
-          Devin Frank brings an adaptable mix of familiar music, polished sound, and an easygoing presence to restaurants, 
-          wineries, weddings, churches, private events, and community gatherings across Northwest Ohio and nearby Southeast Michigan.
+          Real-world notes on live performance, music gear, sound, technology, and the business of being a working musician.
         </p>
         <div class="hero-cta">
-          <a href="contact.html" class="btn btn-primary">Check Availability</a>
-          <a href="songs.html" class="btn btn-secondary">Explore the Music</a>
+          <a href="field-notes/" class="btn btn-primary">Read Field Notes</a>
+          <a href="hire-devin.html" class="btn btn-secondary">Hire Devin</a>
         </div>
+      </div>
+    </section>
+    
+    <!-- Featured Field Notes -->
+    <section class="container">
+      <h2>Latest from Field Notes</h2>
+      <div class="card-grid" id="featured-articles">
+        <!-- Populated by JavaScript -->
+      </div>
+      <div style="text-align: center; margin-top: var(--spacing-lg);">
+        <a href="field-notes/" class="btn btn-secondary">Browse All Articles →</a>
       </div>
     </section>
     
@@ -141,13 +153,48 @@
       </div>
     </section>
     
+    <!-- Content Pillars -->
+    <section class="container" style="background-color: rgba(212, 165, 116, 0.05); padding: var(--spacing-xl) var(--spacing-lg); border-radius: var(--border-radius); margin: 0 var(--spacing-lg);">
+      <h2>What's Here</h2>
+      <p style="font-size: 1rem; margin-bottom: var(--spacing-lg); color: var(--color-text-secondary);">
+        This site covers four core areas of working musician life.
+      </p>
+      <div class="card-grid">
+        <div>
+          <h4>🎵 Live Performance</h4>
+          <p>Real gig experiences, show preparation, setlists, audience interaction, venue lessons, and performance workflows.</p>
+        </div>
+        <div>
+          <h4>⚙️ Gear and Technology</h4>
+          <p>Real-world use of keyboards, mixers, speakers, pedals, apps, MIDI, backing tracks, and live-performance tools.</p>
+        </div>
+        <div>
+          <h4>🔊 Sound and Production</h4>
+          <p>Practical sound reinforcement, setup strategy, volume management, routing, monitoring, and troubleshooting.</p>
+        </div>
+        <div>
+          <h4>💼 The Business of Music</h4>
+          <p>Pricing, marketing, scheduling, professionalism, client communication, and balancing music with entrepreneurship.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Currently Working On -->
+    <section class="container">
+      <h2>Currently Working On</h2>
+      <p style="color: var(--color-text-secondary); margin-bottom: var(--spacing-lg);">An active journey, not completed expertise.</p>
+      <div id="currently-working-on" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg);">
+        <!-- Populated by JavaScript -->
+      </div>
+    </section>
+    
     <!-- Why Book Devin -->
     <section class="container" style="background-color: rgba(212, 165, 116, 0.05); padding: var(--spacing-xl) var(--spacing-lg); border-radius: var(--border-radius); margin: 0 var(--spacing-lg);">
-      <h2>Why Book Devin</h2>
+      <h2>For Venues and Events</h2>
       <div class="card-grid">
         <div>
           <h4>Reliable & Prepared</h4>
-          <p>Professional reliability with thorough preparation. Devin knows the music and the logistics.</p>
+          <p>Professional reliability with thorough preparation. Knows the music and the logistics.</p>
         </div>
         <div>
           <h4>Reads the Room</h4>
@@ -159,7 +206,7 @@
         </div>
         <div>
           <h4>Adaptable Performance</h4>
-          <p>From background ambiance to engaging sing-alongs—each performance is customized to your event.</p>
+          <p>From background ambiance to engaging sing-alongs—customized to your event.</p>
         </div>
       </div>
     </section>
@@ -213,12 +260,56 @@
       <p style="text-align: center; margin-top: var(--spacing-lg);"><a href="shows.html" class="btn btn-secondary">View All Shows →</a></p>
     </section>
     
+    <!-- Newsletter Signup -->
+    <section class="container" style="background-color: rgba(212, 165, 116, 0.05); padding: var(--spacing-xl) var(--spacing-lg); border-radius: var(--border-radius); margin: var(--spacing-2xl) var(--spacing-lg);" id="newsletter-signup">
+      <h2 style="text-align: center;">Follow the Journey</h2>
+      <p style="text-align: center; max-width: 600px; margin: var(--spacing-lg) auto;">
+        Get new Field Notes, gear observations, gig lessons, and behind-the-scenes updates from a working musician.
+      </p>
+      
+      <form id="newsletter-form" style="max-width: 400px; margin: 0 auto;">
+        <div style="margin-bottom: var(--spacing-md);">
+          <label for="newsletter-name" style="display: block; margin-bottom: var(--spacing-sm);">First Name (optional)</label>
+          <input 
+            type="text" 
+            id="newsletter-name" 
+            name="name" 
+            style="width: 100%; padding: var(--spacing-md); border: 1px solid var(--color-border); background: var(--color-bg-dark); color: var(--color-text-primary); border-radius: var(--border-radius); font-family: var(--font-family-sans);"
+          >
+        </div>
+        
+        <div style="margin-bottom: var(--spacing-md);">
+          <label for="newsletter-email" style="display: block; margin-bottom: var(--spacing-sm);">Email Address *</label>
+          <input 
+            type="email" 
+            id="newsletter-email" 
+            name="email" 
+            required
+            style="width: 100%; padding: var(--spacing-md); border: 1px solid var(--color-border); background: var(--color-bg-dark); color: var(--color-text-primary); border-radius: var(--border-radius); font-family: var(--font-family-sans);"
+          >
+        </div>
+        
+        <div style="margin-bottom: var(--spacing-lg); font-size: 0.85rem; color: var(--color-text-secondary);">
+          <input type="checkbox" id="newsletter-consent" name="consent" required style="margin-right: var(--spacing-sm);">
+          <label for="newsletter-consent">I'd like to receive emails about Field Notes, gear, and gigs. I can unsubscribe anytime.</label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe to Field Notes</button>
+        
+        <p id="newsletter-message" style="text-align: center; margin-top: var(--spacing-md); display: none; color: var(--color-success);"></p>
+      </form>
+      
+      <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-secondary); margin-top: var(--spacing-lg);">
+        Your privacy matters. I'll never share your email. <a href="disclosures.html">Learn about disclosures and privacy →</a>
+      </p>
+    </section>
+    
     <!-- Final CTA -->
     <section class="hero" style="margin-bottom: 0;">
       <div class="hero-content">
-        <h2 style="margin-bottom: var(--spacing-lg);">Ready to Book?</h2>
-        <p style="margin-bottom: var(--spacing-lg);">Get in touch to discuss your event, explore available dates, and learn about pricing tailored to your needs.</p>
-        <a href="contact.html" class="btn btn-primary">Contact Devin</a>
+        <h2 style="margin-bottom: var(--spacing-lg);">Need Live Music for Your Venue or Event?</h2>
+        <p style="margin-bottom: var(--spacing-lg);">Professional solo performances adapted to your room. Piano and acoustic guitar for restaurants, wineries, weddings, churches, and events.</p>
+        <a href="hire-devin.html" class="btn btn-primary">Learn About Hiring Devin</a>
       </div>
     </section>
   </main>
@@ -227,78 +318,144 @@
     <div class="footer-content">
       <div class="footer-grid">
         <div class="footer-section">
-          <h3>Quick Links</h3>
+          <h3>Devin Frank Live</h3>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Devin</a></li>
-            <li><a href="book.html">Book an Event</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Services</h3>
-          <ul>
-            <li><a href="restaurants-wineries.html">Restaurants & Wineries</a></li>
-            <li><a href="weddings.html">Weddings</a></li>
-            <li><a href="churches.html">Churches</a></li>
-            <li><a href="festivals.html">Festivals & Events</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Music</h3>
-          <ul>
-            <li><a href="songs.html">Song List</a></li>
+            <li><a href="field-notes/">Field Notes</a></li>
+            <li><a href="gear.html">Gear</a></li>
             <li><a href="shows.html">Shows</a></li>
           </ul>
         </div>
         <div class="footer-section">
-          <h3>Contact</h3>
+          <h3>About</h3>
           <ul>
+            <li><a href="about.html">About Devin</a></li>
+            <li><a href="songs.html">Song List</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="disclosures.html">Disclosures</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Booking</h3>
+          <ul>
+            <li><a href="hire-devin.html">Hire Devin</a></li>
+            <li><a href="restaurants-wineries.html">Restaurants & Wineries</a></li>
+            <li><a href="weddings.html">Weddings</a></li>
+            <li><a href="churches.html">Churches</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>More</h3>
+          <ul>
+            <li><a href="field-notes/">Subscribe to Field Notes</a></li>
+            <li><a href="disclosures.html">Disclosures & Privacy</a></li>
             <li>Email: <a href="mailto:mockingbirddevin@gmail.com">mockingbirddevin@gmail.com</a></li>
-            <li style="margin-top: var(--spacing-md); color: var(--color-text-secondary); font-size: 0.9rem;">Frank Creations LLC</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <div>&copy; 2024 Devin Frank Live. All rights reserved.</div>
+        <div>&copy; 2025 Devin Frank Live. All rights reserved.</div>
       </div>
       <div class="footer-credit">
-        <p style="color: var(--color-text-secondary); font-size: 0.85rem;">Built for Devin Frank Live</p>
+        <p style="color: var(--color-text-secondary); font-size: 0.85rem;">Operated by <a href="#" style="color: var(--color-text-secondary);">Frank Creations LLC</a></p>
       </div>
     </div>
   </footer>
   
+  <script src="data/articles.js"></script>
+  <script src="data/currently-working-on.js"></script>
   <script src="data/events.js"></script>
   <script>
-    // Render a preview of upcoming events on homepage
-    function renderEventPreview() {
-      const previewContainer = document.getElementById('events-list-preview');
-      if (!previewContainer) return;
+    // Render featured articles
+    function renderFeaturedArticles() {
+      const container = document.getElementById('featured-articles');
+      if (!container || typeof articles === 'undefined') return;
       
-      if (typeof events === 'undefined' || events.length === 0) {
-        previewContainer.innerHTML = `
-          <div class="empty-state">
-            <p>Check back soon for upcoming performances. <a href="contact.html">Contact Devin</a> to book an event.</p>
+      // Show 3 most recent articles
+      const featured = articles
+        .sort((a, b) => new Date(b.publication_date) - new Date(a.publication_date))
+        .slice(0, 3);
+      
+      container.innerHTML = featured.map(article => {
+        return `
+          <div class="card">
+            <div style="font-size: 1.5rem; margin-bottom: var(--spacing-md);">📝</div>
+            <h3 style="margin: 0 0 var(--spacing-sm) 0; font-size: 1rem;">
+              <a href="${article.preview_html}" style="color: var(--color-text-primary); text-decoration: none;">
+                ${article.title}
+              </a>
+            </h3>
+            <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin: 0 0 var(--spacing-md) 0;">
+              ${article.excerpt}
+            </p>
+            <div style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-md);">
+              ${new Date(article.publication_date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })} • ${article.reading_time} min
+            </div>
+            <a href="${article.preview_html}" style="color: var(--color-accent-gold); text-decoration: none; font-weight: 500;">Read Article →</a>
           </div>
         `;
-        return;
-      }
+      }).join('');
+    }
+    
+    // Render currently working on items
+    function renderCurrentlyWorkingOn() {
+      const container = document.getElementById('currently-working-on');
+      if (!container || typeof currentlyWorkingOn === 'undefined') return;
+      
+      container.innerHTML = currentlyWorkingOn.map(item => {
+        return `
+          <div style="padding: var(--spacing-lg); border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+            <h4 style="margin: 0 0 var(--spacing-sm) 0;">${item.title}</h4>
+            <p style="color: var(--color-text-secondary); margin: 0; font-size: 0.9rem;">
+              ${item.description}
+            </p>
+          </div>
+        `;
+      }).join('');
+    }
+    
+    // Newsletter form handler
+    function initNewsletterForm() {
+      const form = document.getElementById('newsletter-form');
+      if (!form) return;
+      
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const email = document.getElementById('newsletter-email').value;
+        const name = document.getElementById('newsletter-name').value;
+        const messageEl = document.getElementById('newsletter-message');
+        
+        // TODO: Connect to actual email service (Mailchimp, ConvertKit, etc.)
+        // For now, show a placeholder message
+        messageEl.textContent = 'Thank you! Please check your email to confirm your subscription.';
+        messageEl.style.display = 'block';
+        messageEl.style.color = 'var(--color-success)';
+        
+        // Clear form
+        form.reset();
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+          messageEl.style.display = 'none';
+        }, 5000);
+      });
+    }
+    
+    // Render a preview of upcoming events on homepage
+    function renderEventPreview() {
+      const previewContainer = document.querySelector('[style*="Upcoming Shows"]')?.parentElement;
+      if (!previewContainer || typeof events === 'undefined' || events.length === 0) return;
       
       const publicEvents = events
         .filter(event => event.isPublic !== false)
         .sort((a, b) => new Date(a.date) - new Date(b.date))
         .slice(0, 3);
       
-      if (publicEvents.length === 0) {
-        previewContainer.innerHTML = `
-          <div class="empty-state">
-            <p>Check back soon for upcoming performances. <a href="contact.html">Contact Devin</a> to book an event.</p>
-          </div>
-        `;
-        return;
-      }
+      const eventsList = document.querySelector('[id*="events"]');
+      if (!eventsList || publicEvents.length === 0) return;
       
-      previewContainer.innerHTML = publicEvents.map(event => {
+      eventsList.innerHTML = publicEvents.map(event => {
         const date = new Date(event.date + 'T00:00:00').toLocaleDateString('en-US', { 
           weekday: 'short', 
           year: 'numeric', 
@@ -326,8 +483,15 @@
       }).join('');
     }
     
-    renderEventPreview();
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderFeaturedArticles();
+      renderCurrentlyWorkingOn();
+      initNewsletterForm();
+      renderEventPreview();
+    });
   </script>
+  
   <script src="js/main.js"></script>
 </body>
 </html>

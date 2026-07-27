@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gear directory for Devin Frank Live. Keyboards, mixers, speakers, controllers, and software used in live performances.">
+  <meta name="theme-color" content="#1a1a1a">
+  
+  <link rel="canonical" href="https://devinfranklive.com/gear.html">
+  
+  <meta property="og:title" content="Gear - Devin Frank Live">
+  <meta property="og:description" content="A working musician's gear setup. Keyboards, sound, controllers, and software for live performance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://devinfranklive.com/gear.html">
+  
+  <title>Gear Directory - Devin Frank Live</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='90' font-family='serif' font-weight='bold' fill='%23d4a574'>♪</text></svg>">
+  
+  <style>
+    .gear-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .gear-filter {
+      display: inline-block;
+      padding: var(--spacing-sm) var(--spacing-md);
+      background: var(--color-bg-dark);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--color-text-secondary);
+      transition: all var(--transition-fast);
+      font-size: 0.9rem;
+    }
+    
+    .gear-filter:hover,
+    .gear-filter.active {
+      background: var(--color-accent-gold);
+      color: var(--color-bg-dark);
+      border-color: var(--color-accent-gold);
+    }
+    
+    .gear-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-2xl);
+    }
+    
+    .gear-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      transition: all var(--transition-base);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .gear-card:hover {
+      box-shadow: 0 4px 12px rgba(212, 165, 116, 0.15);
+      border-color: var(--color-accent-gold);
+    }
+    
+    .gear-card-image {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, var(--color-accent-gold), var(--color-accent-copper));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-secondary);
+      font-size: 2.5rem;
+    }
+    
+    .gear-card-content {
+      padding: var(--spacing-lg);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .gear-card-brand {
+      display: inline-block;
+      width: fit-content;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      background: rgba(212, 165, 116, 0.1);
+      color: var(--color-accent-gold);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: var(--border-radius);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .gear-card-status {
+      display: inline-block;
+      width: fit-content;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      font-size: 0.75rem;
+      border-radius: var(--border-radius);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .gear-card-status.current {
+      background: rgba(107, 165, 135, 0.1);
+      color: #6ba587;
+    }
+    
+    .gear-card-status.evaluating {
+      background: rgba(232, 182, 109, 0.1);
+      color: var(--color-accent-amber);
+    }
+    
+    .gear-card-title {
+      font-size: 1rem;
+      margin: 0 0 var(--spacing-sm) 0;
+      line-height: 1.4;
+      flex: 1;
+      color: var(--color-text-primary);
+    }
+    
+    .gear-card-summary {
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: var(--spacing-md);
+      line-height: 1.5;
+    }
+    
+    .gear-card-why {
+      border-top: 1px solid var(--color-border);
+      padding-top: var(--spacing-md);
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+    }
+    
+    .gear-card-why strong {
+      color: var(--color-text-primary);
+      display: block;
+      margin-bottom: var(--spacing-xs);
+    }
+  </style>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Gear Directory",
+    "description": "A working musician's gear setup and equipment directory.",
+    "url": "https://devinfranklive.com/gear.html"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo">Devin Frank Live</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="field-notes/">Field Notes</a></li>
+          <li><a href="gear.html">Gear</a></li>
+          <li><a href="shows.html">Shows</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="songs.html">Song List</a></li>
+          <li><a href="hire-devin.html">Hire Devin</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main id="main-content">
+    <section class="container" style="margin-top: var(--spacing-xl);">
+      <h1>Gear Directory</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-secondary);">
+        Keyboards, mixers, speakers, and tools I use for live performance.
+      </p>
+      <p style="color: var(--color-text-secondary); margin-top: var(--spacing-md);">
+        Real-world use, honest observations, and practical insights. This isn't a buyer's guide—it's a working musician's documentation of what works for solo performances.
+      </p>
+    </section>
+
+    <!-- Filters -->
+    <section class="container">
+      <h2>Filter by Category</h2>
+      <div class="gear-filters">
+        <button class="gear-filter active" data-filter="all">All Gear</button>
+        <button class="gear-filter" data-filter="keyboards">Keyboards</button>
+        <button class="gear-filter" data-filter="mixers">Mixers</button>
+        <button class="gear-filter" data-filter="speakers">Speakers</button>
+        <button class="gear-filter" data-filter="guitars">Guitars</button>
+        <button class="gear-filter" data-filter="software">Software</button>
+        <button class="gear-filter" data-filter="effects">Effects & Controllers</button>
+      </div>
+    </section>
+
+    <!-- Gear Grid -->
+    <section class="container">
+      <div id="gear-container" class="gear-grid">
+        <!-- Populated by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Related Reading -->
+    <section class="container" style="background-color: rgba(212, 165, 116, 0.05); padding: var(--spacing-xl) var(--spacing-lg); border-radius: var(--border-radius); margin: var(--spacing-2xl) var(--spacing-lg);">
+      <h2>Learn More in Field Notes</h2>
+      <p>
+        Want to understand the real-world setup and workflows? <a href="field-notes/">Read the Field Notes</a> for articles about building a portable rig, keyboard selection, and integrating gear into live performances.
+      </p>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Devin Frank Live</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="field-notes/">Field Notes</a></li>
+            <li><a href="gear.html">Gear</a></li>
+            <li><a href="shows.html">Shows</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>About</h3>
+          <ul>
+            <li><a href="about.html">About Devin</a></li>
+            <li><a href="songs.html">Song List</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="disclosures.html">Disclosures</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Booking</h3>
+          <ul>
+            <li><a href="hire-devin.html">Hire Devin</a></li>
+            <li><a href="restaurants-wineries.html">Restaurants & Wineries</a></li>
+            <li><a href="weddings.html">Weddings</a></li>
+            <li><a href="churches.html">Churches</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>More</h3>
+          <ul>
+            <li><a href="field-notes/">Subscribe to Field Notes</a></li>
+            <li><a href="disclosures.html">Disclosures & Privacy</a></li>
+            <li>Email: <a href="mailto:mockingbirddevin@gmail.com">mockingbirddevin@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2025 Devin Frank Live. All rights reserved.</div>
+      </div>
+      <div class="footer-credit">
+        <p style="color: var(--color-text-secondary); font-size: 0.85rem;">Operated by <a href="#" style="color: var(--color-text-secondary);">Frank Creations LLC</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/gear.js"></script>
+  <script>
+    const gearContainer = document.getElementById('gear-container');
+    const filterButtons = document.querySelectorAll('.gear-filter');
+    let currentFilter = 'all';
+
+    function renderGear() {
+      if (typeof gear === 'undefined') return;
+      
+      const filtered = currentFilter === 'all' 
+        ? gear 
+        : gear.filter(item => item.category.toLowerCase().replace(/\s+/g, '') === currentFilter.toLowerCase().replace(/\s+/g, ''));
+
+      gearContainer.innerHTML = filtered.map(item => {
+        const categoryId = item.category.toLowerCase().replace(/\s+/g, '-');
+        const statusClass = item.status === 'current' ? 'current' : 'evaluating';
+        const statusLabel = item.status === 'current' ? 'In Use' : 'Evaluating';
+        
+        return `
+          <div class="gear-card">
+            <div class="gear-card-image">⚙️</div>
+            <div class="gear-card-content">
+              <div class="gear-card-brand">${item.brand}</div>
+              <div class="gear-card-status ${statusClass}">${statusLabel}</div>
+              <h3 class="gear-card-title">${item.name}</h3>
+              <p class="gear-card-summary">${item.summary}</p>
+              <div class="gear-card-why">
+                <strong>Why I use it:</strong>
+                ${item.why_i_use_it}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        currentFilter = button.dataset.filter;
+        renderGear();
+      });
+    });
+
+    renderGear();
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

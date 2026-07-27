@@ -3,6 +3,8 @@
 
 User-agent: *
 Allow: /
+Allow: /field-notes/
+Allow: /gear.html
 Disallow: /images/placeholder/
 
 Sitemap: https://devinfranklive.com/sitemap.xml
