@@ -426,19 +426,20 @@
         const name = document.getElementById('newsletter-name').value;
         const messageEl = document.getElementById('newsletter-message');
         
-        // TODO: Connect to actual email service (Mailchimp, ConvertKit, etc.)
-        // For now, show a placeholder message
-        messageEl.textContent = 'Thank you! Please check your email to confirm your subscription.';
+        // NOTE: This form is not yet connected to an email service.
+        // To activate, connect to Mailchimp, ConvertKit, or another provider.
+        // For now, prevent submission to avoid false success messages.
+        messageEl.textContent = 'Newsletter signup will be active soon. In the meantime, email mockingbirddevin@gmail.com to join the mailing list.';
         messageEl.style.display = 'block';
-        messageEl.style.color = 'var(--color-success)';
+        messageEl.style.color = 'var(--color-text-secondary)';
         
-        // Clear form
-        form.reset();
+        // Do not clear form - let user copy their email if needed
+        // Do not submit anywhere
         
-        // Hide message after 5 seconds
+        // Hide message after 7 seconds
         setTimeout(() => {
           messageEl.style.display = 'none';
-        }, 5000);
+        }, 7000);
       });
     }
     
