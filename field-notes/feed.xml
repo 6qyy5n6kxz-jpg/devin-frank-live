@@ -1,44 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss
+  version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+>
   <channel>
     <title>Field Notes - Devin Frank Live</title>
     <link>https://devinfranklive.com/field-notes/</link>
     <description>Real-world insights on live performance, music gear, sound, and the business of being a working musician.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jan 2025 12:00:00 GMT</lastBuildDate>
-    <atom:link href="https://devinfranklive.com/field-notes/feed.xml" rel="self" type="application/rss+xml"/>
-    
-    <item>
-      <title>Seven Lessons from Restaurant Gigs: How Volume and Pacing Taught Me About Playing for the Room</title>
-      <link>https://devinfranklive.com/field-notes/restaurant-gigs-taught-volume.html</link>
-      <pubDate>Wed, 29 Jan 2025 10:00:00 GMT</pubDate>
-      <author>mockingbirddevin@gmail.com (Devin Frank)</author>
-      <category>Gig Tips</category>
-      <description>Seven lessons from restaurant performing: volume management, song choice evolution, reading the room, knowing when to stop. Practical insights on early/mid/late dining energy, dynamic range, and serving the room.</description>
-      <content:encoded><![CDATA[<p>Real-world notes on reading the room, managing volume and energy, and making choices that serve the space instead of showcasing yourself.</p><p>Topics covered: early/mid/late dining energy management, dynamic range, frequency balance, song selection, knowing when to stop, and adapting to different restaurant atmospheres.</p><p>7 minute read. Published Jan 29, 2025.</p>]]></content:encoded>
-      <guid isPermaLink="true">https://devinfranklive.com/field-notes/restaurant-gigs-taught-volume.html</guid>
-    </item>
+    <lastBuildDate>Tue, 28 Jul 2026 14:00:00 GMT</lastBuildDate>
+
+    <atom:link
+      href="https://devinfranklive.com/field-notes/feed.xml"
+      rel="self"
+      type="application/rss+xml"
+    />
 
     <item>
-      <title>Why I Chose the Numa X Piano 73: A Practical Keyboard Review from a Working Musician</title>
-      <link>https://devinfranklive.com/field-notes/why-i-chose-numa-x-piano.html</link>
-      <pubDate>Wed, 22 Jan 2025 10:00:00 GMT</pubDate>
-      <author>mockingbirddevin@gmail.com (Devin Frank)</author>
-      <category>Gear Reviews</category>
-      <description>Keyboard selection rationale: piano quality, organ sounds, portability at 73 keys, build quality, connectivity. Honest pros/cons assessment and real-world use context in a solo live rig.</description>
-      <content:encoded><![CDATA[<p>Why I chose the Studiologic Numa X Piano 73 for solo performances: honest assessment of piano sounds, organ capabilities, portability, connectivity, and fit within my live rig.</p><p>Covers: piano quality, organ sound palette, 73-key portability, build and feel, MIDI integration, and realistic use cases. Good fit for piano-based music, NOT for deep synthesis exploration.</p><p>10 minute read. Published Jan 22, 2025.</p>]]></content:encoded>
-      <guid isPermaLink="true">https://devinfranklive.com/field-notes/why-i-chose-numa-x-piano.html</guid>
-    </item>
-
-    <item>
-      <title>Building a Practical Solo Rig: From Simplest Setup to Recommended Configuration</title>
-      <link>https://devinfranklive.com/field-notes/building-practical-solo-rig.html</link>
-      <pubDate>Wed, 15 Jan 2025 10:00:00 GMT</pubDate>
+      <title>Every Show Should Feel Different</title>
+      <link>https://devinfranklive.com/field-notes/every-show-should-feel-different.html</link>
+      <pubDate>Tue, 28 Jul 2026 14:00:00 GMT</pubDate>
       <author>mockingbirddevin@gmail.com (Devin Frank)</author>
       <category>Live Performance</category>
-      <description>About building solo musician rigs: keyboards, mixers, speakers, supporting gear. Topics: simplest setup vs. recommended setup, speaker configuration, acoustic guitar DI, backing tracks.</description>
-      <content:encoded><![CDATA[<p>Step-by-step guide to building a portable, reliable rig for solo performances. Covers the absolute basics, then a recommended production-quality setup.</p><p>Topics: simplest setup, keyboard/mixer/speaker configuration, acoustic guitar direct injection, backing track systems, and the actual rig I use: Numa X Piano 73, CQ-20B mixer, 2x EV Evolve 50M speakers, plus supporting equipment.</p><p>8 minute read. Published Jan 15, 2025.</p>]]></content:encoded>
-      <guid isPermaLink="true">https://devinfranklive.com/field-notes/building-practical-solo-rig.html</guid>
+
+      <description>Why I refuse to play the same show twice—and why the best setlist is the one built for the room in front of you.</description>
+
+      <content:encoded><![CDATA[
+        <p>I don’t think I’ve ever played the same show twice.</p>
+        <p>The audience changes, the room changes, and the music should change with it. This Field Note explores why setlists should remain flexible, how learning more songs creates more options, and why every performance should give people a reason to come back.</p>
+        <p><strong>Field Note:</strong> The best setlist isn’t the one that’s perfectly planned. It’s the one that’s willing to change.</p>
+        <p><a href="https://devinfranklive.com/field-notes/every-show-should-feel-different.html">Read the full article</a></p>
+      ]]></content:encoded>
+
+      <guid isPermaLink="true">https://devinfranklive.com/field-notes/every-show-should-feel-different.html</guid>
     </item>
   </channel>
 </rss>

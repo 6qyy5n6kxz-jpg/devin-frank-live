@@ -106,7 +106,7 @@ const articles = [
     keywords: ["rig", "setup", "portable", "mixer", "speakers"],
     related_gear: ["numa-x-piano-73", "allen-heath-cq-20b", "ev-evolve-50m"],
     related_articles: ["why-i-chose-numa-x-piano"],
-    preview_html: "field-notes/building-practical-solo-rig.html"
+    preview_html: "/field-notes/building-practical-solo-rig.html"
   }
   // Add more articles here
 ];
