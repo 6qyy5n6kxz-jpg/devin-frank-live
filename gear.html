@@ -116,6 +116,11 @@
       color: var(--color-accent-amber);
     }
     
+    .gear-card-status.backup {
+      background: rgba(108, 145, 175, 0.1);
+      color: #6c91af;
+    }
+    
     .gear-card-title {
       font-size: 1rem;
       margin: 0 0 var(--spacing-sm) 0;
@@ -198,7 +203,7 @@
         <button class="gear-filter" data-filter="speakers">Speakers</button>
         <button class="gear-filter" data-filter="guitars">Guitars</button>
         <button class="gear-filter" data-filter="software">Software</button>
-        <button class="gear-filter" data-filter="effects">Effects & Controllers</button>
+        <button class="gear-filter" data-filter="effects&controllers">Effects & Controllers</button>
       </div>
     </section>
 
@@ -281,8 +286,13 @@
 
       gearContainer.innerHTML = filtered.map(item => {
         const categoryId = item.category.toLowerCase().replace(/\s+/g, '-');
-        const statusClass = item.status === 'current' ? 'current' : 'evaluating';
-        const statusLabel = item.status === 'current' ? 'In Use' : 'Evaluating';
+        const statusClass = item.status;
+        let statusLabel = 'In Use';
+        if (item.status === 'evaluating') {
+          statusLabel = 'Evaluating';
+        } else if (item.status === 'backup') {
+          statusLabel = 'Backup';
+        }
         
         return `
           <div class="gear-card">
