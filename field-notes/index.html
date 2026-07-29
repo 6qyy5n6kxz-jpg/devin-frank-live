@@ -232,48 +232,16 @@
     </section>
 
     <!-- Search and Filter -->
-    <section class="container">
-      <div class="search-box">
-        <input 
-          type="text" 
-          id="search-input" 
-          placeholder="Search articles..." 
-          aria-label="Search articles"
-        >
-        <select id="category-select" aria-label="Filter by category">
-          <option value="">All Categories</option>
-          <option value="live-performance">Live Performance</option>
-          <option value="gear-reviews">Gear Reviews</option>
-          <option value="gig-tips">Gig Tips</option>
-          <option value="sound-production">Sound and Production</option>
-          <option value="music-business">Music Business</option>
-          <option value="church-music">Church Music</option>
-          <option value="restaurants-wineries">Restaurants and Wineries</option>
-          <option value="solo-performer">Solo Performer</option>
-          <option value="behind-scenes">Behind the Scenes</option>
-          <option value="song-stories">Song Stories</option>
-        </select>
-      </div>
-
-      <div class="category-filters">
-        <button class="category-filter active" data-category="">All</button>
-        <button class="category-filter" data-category="live-performance">Live Performance</button>
-        <button class="category-filter" data-category="gear-reviews">Gear Reviews</button>
-        <button class="category-filter" data-category="gig-tips">Gig Tips</button>
-        <button class="category-filter" data-category="sound-production">Sound & Production</button>
-        <button class="category-filter" data-category="music-business">Music Business</button>
-      </div>
-    </section>
-
-    <!-- Articles Grid -->
-    <section class="container">
-      <div id="articles-container" class="articles-grid">
-        <!-- Articles will be populated by JavaScript -->
-      </div>
-      
-      <div id="no-results" class="no-articles" style="display: none;">
-        <div class="empty-state-title">No articles found</div>
-        <p>Try adjusting your search or filters to find what you're looking for.</p>
+    <!-- Coming Soon Message -->
+    <section class="container" style="text-align: center; padding: var(--spacing-2xl) var(--spacing-lg);">
+      <div style="max-width: 600px; margin: 0 auto;">
+        <h2 style="font-size: 2rem; margin-bottom: var(--spacing-lg);">New Field Notes are coming soon</h2>
+        <p style="font-size: 1.1rem; color: var(--color-text-secondary); line-height: 1.6;">
+          Practical lessons from the stage, the sound booth, and the venue side of live music.
+        </p>
+        <p style="color: var(--color-text-secondary); margin-top: var(--spacing-lg);">
+          Subscribe below to be notified when the first article publishes.
+        </p>
       </div>
     </section>
 

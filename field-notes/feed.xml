@@ -9,31 +9,12 @@
     <link>https://devinfranklive.com/field-notes/</link>
     <description>Real-world insights on live performance, music gear, sound, and the business of being a working musician.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jul 2026 14:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jul 2026 10:00:00 GMT</lastBuildDate>
 
     <atom:link
       href="https://devinfranklive.com/field-notes/feed.xml"
       rel="self"
       type="application/rss+xml"
     />
-
-    <item>
-      <title>Every Show Should Feel Different</title>
-      <link>https://devinfranklive.com/field-notes/every-show-should-feel-different.html</link>
-      <pubDate>Tue, 28 Jul 2026 14:00:00 GMT</pubDate>
-      <author>mockingbirddevin@gmail.com (Devin Frank)</author>
-      <category>Live Performance</category>
-
-      <description>Why I refuse to play the same show twice—and why the best setlist is the one built for the room in front of you.</description>
-
-      <content:encoded><![CDATA[
-        <p>I don’t think I’ve ever played the same show twice.</p>
-        <p>The audience changes, the room changes, and the music should change with it. This Field Note explores why setlists should remain flexible, how learning more songs creates more options, and why every performance should give people a reason to come back.</p>
-        <p><strong>Field Note:</strong> The best setlist isn’t the one that’s perfectly planned. It’s the one that’s willing to change.</p>
-        <p><a href="https://devinfranklive.com/field-notes/every-show-should-feel-different.html">Read the full article</a></p>
-      ]]></content:encoded>
-
-      <guid isPermaLink="true">https://devinfranklive.com/field-notes/every-show-should-feel-different.html</guid>
-    </item>
   </channel>
 </rss>
