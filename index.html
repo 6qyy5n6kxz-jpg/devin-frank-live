@@ -77,7 +77,8 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Working musician. Sound engineer. Venue operator. Sharing what I learn from every side of the stage.</h1>
-        <p>Real-world Field Notes on live performance, sound, gear, technology, and the business of being a working musician.</p>
+        <p>Practical lessons on live performance, sound, gear, and the business of being a working musician.</p>
+        <p style="font-size: 0.95rem; color: var(--color-text-secondary); margin-bottom: var(--spacing-lg);">Based in Northwest Ohio, I perform for restaurants, wineries, churches, weddings, festivals, and community events while documenting what I learn along the way.</p>
         <div class="hero-cta">
           <a href="field-notes/" class="btn btn-primary">Read Field Notes</a>
           <a href="hire-devin.html" class="btn btn-secondary">Hire Devin</a>
@@ -88,11 +89,43 @@
     <!-- Featured Field Notes -->
     <section class="container">
       <h2>Latest from Field Notes</h2>
-      <div id="featured-article" style="max-width: 600px; margin: 0 auto var(--spacing-lg);">
+      <div id="featured-articles" style="margin: 0 auto var(--spacing-lg);">
         <!-- Populated by JavaScript -->
       </div>
       <div style="text-align: center;">
         <a href="field-notes/" class="btn btn-secondary">Browse All Articles →</a>
+      </div>
+    </section>
+    
+    <!-- Experience You Can Count On -->
+    <section class="container">
+      <h2>Experience You Can Count On</h2>
+      <div style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg);">
+        <div>
+          <h4 style="color: var(--color-accent-gold); margin-bottom: var(--spacing-sm);">✓</h4>
+          <h4 style="margin-bottom: var(--spacing-sm);">Working Musician</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-secondary);">Performing throughout Northwest Ohio for over a decade.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--color-accent-gold); margin-bottom: var(--spacing-sm);">✓</h4>
+          <h4 style="margin-bottom: var(--spacing-sm);">Venue Operator & Producer</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-secondary);">Understand what venues and event planners actually need.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--color-accent-gold); margin-bottom: var(--spacing-sm);">✓</h4>
+          <h4 style="margin-bottom: var(--spacing-sm);">Sound Engineer</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-secondary);">Professional audio setup, mixing, and live sound management.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--color-accent-gold); margin-bottom: var(--spacing-sm);">✓</h4>
+          <h4 style="margin-bottom: var(--spacing-sm);">Business Owner</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-secondary);">Founder of Frank Creations LLC, handling the business side of music.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--color-accent-gold); margin-bottom: var(--spacing-sm);">✓</h4>
+          <h4 style="margin-bottom: var(--spacing-sm);">Diverse Event Experience</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-secondary);">Performer for restaurants, wineries, weddings, churches, festivals, and community events.</p>
+        </div>
       </div>
     </section>
     
@@ -150,22 +183,22 @@
       <h2>Types of Events</h2>
       <div class="card-grid">
         <div class="card">
-          <h3>Restaurants & Wineries</h3>
+          <h3><span style="margin-right: var(--spacing-sm);">🍷</span>Restaurants & Wineries</h3>
           <p>Relaxed background music or featured performance for dining rooms, patios, and tasting rooms.</p>
           <a href="restaurants-wineries.html">Learn more →</a>
         </div>
         <div class="card">
-          <h3>Weddings & Events</h3>
+          <h3><span style="margin-right: var(--spacing-sm);">💒</span>Weddings & Events</h3>
           <p>Ceremony music, cocktail hour entertainment, and dinner ambiance. Special songs learned upon request.</p>
           <a href="weddings.html">Learn more →</a>
         </div>
         <div class="card">
-          <h3>Churches</h3>
+          <h3><span style="margin-right: var(--spacing-sm);">⛪</span>Churches</h3>
           <p>Special music for services, worship support, and faith-centered community events.</p>
           <a href="churches.html">Learn more →</a>
         </div>
         <div class="card">
-          <h3>Festivals & Community</h3>
+          <h3><span style="margin-right: var(--spacing-sm);">🎪</span>Festivals & Community</h3>
           <p>Fairs, markets, park concerts, and local celebrations with professional sound.</p>
           <a href="festivals.html">Learn more →</a>
         </div>
@@ -214,7 +247,7 @@
     <section class="container" style="background-color: rgba(212, 165, 116, 0.05); padding: var(--spacing-md) var(--spacing-lg); border-radius: var(--border-radius); margin: var(--spacing-xl) var(--spacing-lg);" id="newsletter-signup">
       <h2 style="text-align: center; margin-bottom: var(--spacing-md);">Follow the Journey</h2>
       <p style="text-align: center; max-width: 500px; margin: 0 auto var(--spacing-lg); font-size: 0.95rem;">
-        Get new Field Notes about live performance, sound, gear, and the business of working music.
+        Get practical Field Notes about performing, sound, gear, and the business of live music. No spam—just real lessons from the road.
       </p>
       
       <form id="newsletter-form" style="max-width: 350px; margin: 0 auto;">
@@ -306,35 +339,42 @@
   <script src="data/currently-working-on.js"></script>
   <script src="data/events.js"></script>
   <script>
-    // Render featured articles
+    // Render featured articles (up to 3 most recent)
     function renderFeaturedArticles() {
-      const container = document.getElementById('featured-article');
+      const container = document.getElementById('featured-articles');
       if (!container || typeof articles === 'undefined' || articles.length === 0) return;
       
-      // Show most recent article
+      // Show up to 3 most recent articles
       const featured = articles
-        .sort((a, b) => new Date(b.publication_date) - new Date(a.publication_date))[0];
+        .sort((a, b) => new Date(b.publication_date) - new Date(a.publication_date))
+        .slice(0, 3);
       
-      if (!featured) return;
+      if (featured.length === 0) return;
+      
+      const gridClass = featured.length === 1 ? 'style="max-width: 750px; margin: 0 auto;"' : 'style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);"';
       
       container.innerHTML = `
-        <div style="border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: var(--spacing-lg);">
-          <div style="display: flex; gap: var(--spacing-md); margin-bottom: var(--spacing-md); font-size: 0.9rem; color: var(--color-text-secondary);">
-            <span>${featured.category}</span>
-            <span>•</span>
-            <span>${new Date(featured.publication_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-            <span>•</span>
-            <span>${featured.reading_time} min read</span>
-          </div>
-          <h3 style="margin: 0 0 var(--spacing-md) 0; font-size: 1.3rem; line-height: 1.4;">
-            <a href="${featured.preview_html}" style="color: var(--color-text-primary); text-decoration: none;">
-              ${featured.title}
-            </a>
-          </h3>
-          <p style="color: var(--color-text-secondary); font-size: 0.95rem; margin: 0 0 var(--spacing-lg) 0; font-style: italic;">
-            ${featured.excerpt}
-          </p>
-          <a href="${featured.preview_html}" class="btn btn-primary">Read Article</a>
+        <div ${gridClass}>
+          ${featured.map(article => `
+            <article style="border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: var(--spacing-lg);">
+              <div style="display: flex; gap: var(--spacing-md); margin-bottom: var(--spacing-md); font-size: 0.9rem; color: var(--color-text-secondary);">
+                <span>${article.category}</span>
+                <span>•</span>
+                <span>${new Date(article.publication_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                <span>•</span>
+                <span>${article.reading_time} min read</span>
+              </div>
+              <h3 style="margin: 0 0 var(--spacing-md) 0; font-size: 1.1rem; line-height: 1.4;">
+                <a href="${article.preview_html}" style="color: var(--color-text-primary); text-decoration: none;">
+                  ${article.title}
+                </a>
+              </h3>
+              <p style="color: var(--color-text-secondary); font-size: 0.95rem; margin: 0 0 var(--spacing-lg) 0;">
+                ${article.excerpt}
+              </p>
+              <a href="${article.preview_html}" class="btn btn-primary" style="display: inline-block;">Read Article</a>
+            </article>
+          `).join('')}
         </div>
       `;
     }
