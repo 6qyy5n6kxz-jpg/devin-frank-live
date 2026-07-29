@@ -232,16 +232,33 @@
     </section>
 
     <!-- Search and Filter -->
-    <!-- Coming Soon Message -->
-    <section class="container" style="text-align: center; padding: var(--spacing-2xl) var(--spacing-lg);">
-      <div style="max-width: 600px; margin: 0 auto;">
-        <h2 style="font-size: 2rem; margin-bottom: var(--spacing-lg);">New Field Notes are coming soon</h2>
-        <p style="font-size: 1.1rem; color: var(--color-text-secondary); line-height: 1.6;">
-          Practical lessons from the stage, the sound booth, and the venue side of live music.
-        </p>
-        <p style="color: var(--color-text-secondary); margin-top: var(--spacing-lg);">
-          Subscribe below to be notified when the first article publishes.
-        </p>
+    <section class="container" style="margin: var(--spacing-xl) var(--spacing-lg);">
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Search articles..." 
+          aria-label="Search articles"
+        >
+      </div>
+
+      <div class="category-filters">
+        <a href="#" class="category-filter active" data-category="">All Articles</a>
+        <a href="#" class="category-filter" data-category="live-performance">Live Performance</a>
+        <a href="#" class="category-filter" data-category="gear-and-technology">Gear & Technology</a>
+        <a href="#" class="category-filter" data-category="sound-and-production">Sound & Production</a>
+        <a href="#" class="category-filter" data-category="the-business-of-music">Music Business</a>
+      </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="container">
+      <div id="articles-container" class="articles-grid">
+        <!-- Populated by JavaScript -->
+      </div>
+      <div id="no-results" class="no-articles" style="display: none;">
+        <div class="empty-state-title">No articles found</div>
+        <p>Try adjusting your search or filters.</p>
       </div>
     </section>
 
@@ -382,22 +399,10 @@
       renderArticles();
     });
 
-    categorySelect.addEventListener('change', (e) => {
-      currentCategory = e.target.value;
-      // Update button state
-      categoryButtons.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.dataset.category === currentCategory) {
-          btn.classList.add('active');
-        }
-      });
-      renderArticles();
-    });
-
     categoryButtons.forEach(button => {
-      button.addEventListener('click', () => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
         currentCategory = button.dataset.category;
-        categorySelect.value = currentCategory;
         categoryButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
         renderArticles();
@@ -411,7 +416,6 @@
     const params = new URLSearchParams(window.location.search);
     if (params.has('category')) {
       currentCategory = params.get('category');
-      categorySelect.value = currentCategory;
       categoryButtons.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.category === currentCategory);
       });
