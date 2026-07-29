@@ -736,34 +736,298 @@ footer {
   border-top: 1px solid var(--color-border);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive - Mobile Optimization */
+
+/* Extra Small Devices (320px - 374px) */
+@media (max-width: 374px) {
   section {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
   }
   
   h1 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  h4 {
+    font-size: 1rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
   }
   
   .hero {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
   
   .hero-cta {
+    gap: 0.75rem;
     flex-direction: column;
-    align-items: stretch;
   }
   
   .btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
     width: 100%;
   }
   
   .card-grid {
-    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .card h3 {
+    font-size: 1rem;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+  }
+  
+  input,
+  textarea,
+  select {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+  
+  label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  footer {
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+  }
+  
+  .footer-section h3 {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Devices (375px - 425px) */
+@media (max-width: 425px) {
+  section {
+    padding: 1.75rem 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+    margin-bottom: 1.125rem;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.875rem;
+  }
+  
+  h4 {
+    font-size: 1.05rem;
+  }
+  
+  p {
+    font-size: 0.975rem;
+    margin-bottom: 1.125rem;
+  }
+  
+  .hero {
+    padding: 1.75rem 1rem;
+    margin-bottom: 1.75rem;
+  }
+  
+  .hero p {
+    font-size: 0.975rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-cta {
+    gap: 0.75rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .card h3 {
+    font-size: 1.05rem;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card a {
+    font-size: 0.9rem;
+  }
+  
+  input,
+  textarea,
+  select {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    min-height: 44px;
+  }
+  
+  label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  footer {
+    padding: 1.75rem 1rem;
+    margin-top: 2rem;
+  }
+  
+  .footer-grid {
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-section h3 {
+    font-size: 0.95rem;
   }
   
   .footer-bottom {
+    padding-top: 1rem;
+  }
+}
+
+/* Tablet / Medium (426px - 768px) */
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 1.25rem;
+    margin-bottom: 2.25rem;
+  }
+  
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  h1 {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 1.25rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1.25rem;
+  }
+  
+  .hero {
+    padding: 2rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.875rem 1.5rem;
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+  }
+  
+  input,
+  textarea,
+  select {
+    padding: 0.875rem;
+    min-height: 44px;
+  }
+  
+  label {
+    margin-bottom: 0.625rem;
+  }
+  
+  footer {
+    padding: 2rem 1.25rem;
+    margin-top: 2.5rem;
+  }
+  
+  .footer-grid {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-bottom {
+    padding-top: 1.25rem;
     flex-direction: column;
     text-align: center;
   }
@@ -774,7 +1038,7 @@ footer {
   
   .song-table th,
   .song-table td {
-    padding: var(--spacing-sm);
+    padding: 0.75rem;
   }
   
   .event-header {
@@ -797,6 +1061,75 @@ footer {
 
 .mb-lg {
   margin-bottom: var(--spacing-lg);
+}
+
+/* Mobile-Specific Section Optimizations */
+
+/* Featured Articles Grid - Responsive */
+@media (max-width: 768px) {
+  #featured-articles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 768px) {
+  #featured-articles > div {
+    padding: 1rem !important;
+  }
+  
+  #featured-articles h3 {
+    font-size: 1rem !important;
+  }
+}
+
+/* Experience Section - Compact Mobile Layout */
+@media (max-width: 425px) {
+  [style*="grid-template-columns: repeat(auto-fit"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Newsletter Section - Tighter Mobile Spacing */
+@media (max-width: 768px) {
+  #newsletter-signup {
+    margin: 1.5rem 1rem !important;
+    padding: 1.5rem 1rem !important;
+  }
+  
+  #newsletter-signup h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  #newsletter-signup p {
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  #newsletter-form {
+    max-width: 100% !important;
+  }
+}
+
+/* Currently Exploring Section - More Compact */
+@media (max-width: 768px) {
+  [style*="background-color: rgba(212, 165, 116, 0.05)"] {
+    margin: 1.5rem 1rem !important;
+    padding: 1.25rem !important;
+  }
+}
+
+/* Form Elements - Optimized Height */
+@media (max-width: 768px) {
+  input[type="email"],
+  input[type="text"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
 }
 
 .mb-2xl {
