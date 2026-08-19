@@ -1301,6 +1301,26 @@ footer {
   gap: var(--space-lg);
 }
 
+/* Responsive grid layouts */
+.experience-grid,
+.hire-devin-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+  .experience-grid,
+  .hire-devin-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-grid,
+  .hire-devin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 #featured-articles article {
   background-color: transparent;
   border: none;
@@ -1332,12 +1352,30 @@ footer {
   #featured-articles article > div:first-child {
     min-height: 300px;
   }
+  
+  #browse-all-btn {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
   #featured-articles article > div:first-child {
     min-height: 250px;
   }
+}
+
+/* Newsletter form styling */
+#newsletter-form label {
+  color: #F4F0E8;
+}
+
+#newsletter-form input[type="checkbox"] {
+  accent-color: var(--color-accent-copper);
+}
+
+#newsletter-form #newsletter-consent {
+  width: auto;
+  margin: 0;
 }
 
 /* Section Padding Helpers */

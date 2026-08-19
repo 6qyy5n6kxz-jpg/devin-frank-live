@@ -92,13 +92,10 @@
       <div class="container">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-xl); gap: var(--space-lg);">
           <h2 style="margin: 0;">Latest from Field Notes</h2>
-          <a href="field-notes/" class="btn btn-secondary" style="white-space: nowrap; display: none;" id="browse-all-desktop">Browse All →</a>
+          <a href="field-notes/" class="btn btn-secondary" style="white-space: nowrap;" id="browse-all-btn">Browse All →</a>
         </div>
         <div id="featured-articles" style="margin-bottom: 0;">
           <!-- Populated by JavaScript -->
-        </div>
-        <div style="text-align: center; margin-top: var(--space-xl);">
-          <a href="field-notes/" class="btn btn-secondary" id="browse-all-mobile">Browse All →</a>
         </div>
       </div>
     </section>
@@ -108,7 +105,7 @@
     <section style="background-color: var(--color-bg-secondary); padding: var(--space-2xl) var(--space-lg); margin-bottom: var(--space-2xl);">
       <div class="container">
         <h2 style="margin-bottom: var(--space-lg);">Experience You Can Count On</h2>
-        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);">
+        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg);" class="experience-grid">
           <div>
             <h4 style="color: var(--color-accent-copper); margin-bottom: var(--space-sm); font-size: 1rem;">Working Musician</h4>
             <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Performing throughout Northwest Ohio across restaurants, wineries, churches, weddings, festivals, and community events.</p>
@@ -135,7 +132,7 @@
         <h2 style="margin-bottom: var(--space-lg);">Hire Devin</h2>
         <p style="max-width: 800px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-xl);">Professional solo performances on piano or acoustic guitar, tailored to the room, audience, and purpose of the event.</p>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); max-width: 1000px; margin-bottom: var(--space-xl);">
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); max-width: 1000px; margin-bottom: var(--space-xl);" class="hire-devin-grid">
           <div class="card">
             <h3 style="font-size: 1.25rem; margin-top: 0; margin-bottom: var(--space-md);">Restaurants & Wineries</h3>
             <p style="color: var(--color-text-secondary); margin-bottom: var(--space-md);">Relaxed background music or featured performance for dining rooms, patios, and tasting rooms.</p>
@@ -201,7 +198,7 @@
           
           <form id="newsletter-form" style="max-width: 480px; margin: 0 auto;">
             <div style="margin-bottom: var(--space-md);">
-              <label for="newsletter-email" style="display: block; margin-bottom: var(--space-sm); font-size: 0.9rem; color: var(--color-text-inverse); text-align: left;">Email Address</label>
+              <label for="newsletter-email" style="display: block; margin-bottom: var(--space-sm); font-size: 0.9rem; color: #F4F0E8; text-align: left;">Email Address</label>
               <input 
                 type="email" 
                 id="newsletter-email" 
@@ -212,9 +209,9 @@
               >
             </div>
             
-            <div style="margin-bottom: var(--space-md); font-size: 0.85rem; color: var(--color-text-inverse); text-align: left;">
+            <div style="margin-bottom: var(--space-md); font-size: 0.85rem; color: #F4F0E8; text-align: left;">
               <input type="checkbox" id="newsletter-consent" name="consent" required style="margin-right: var(--space-sm);">
-              <label for="newsletter-consent">I'd like to receive emails about Field Notes and gigs. I can unsubscribe anytime.</label>
+              <label for="newsletter-consent" style="color: #F4F0E8;">I'd like to receive emails about Field Notes and gigs. I can unsubscribe anytime.</label>
             </div>
             
             <button type="submit" class="btn btn-primary" style="width: 100%; background-color: var(--color-accent-copper); border-color: var(--color-accent-copper);">Subscribe</button>
@@ -222,8 +219,8 @@
             <p id="newsletter-message" style="text-align: center; margin-top: var(--space-md); display: none; font-size: 0.85rem; color: var(--color-text-inverse);"></p>
           </form>
           
-          <p style="text-align: center; font-size: 0.8rem; color: var(--color-text-inverse); margin-top: var(--space-lg); opacity: 0.9;">
-            <a href="disclosures.html" style="color: var(--color-text-inverse); text-decoration: underline;">Privacy & Disclosures</a>
+          <p style="text-align: center; font-size: 0.8rem; color: #F4F0E8; margin-top: var(--space-lg); opacity: 0.9;">
+            <a href="disclosures.html" style="color: #F4F0E8; text-decoration: underline;">Privacy & Disclosures</a>
           </p>
         </div>
       </div>
