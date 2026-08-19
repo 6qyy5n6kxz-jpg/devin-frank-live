@@ -1292,6 +1292,47 @@ footer {
   }
 }
 
+/* Homepage Section Refinements */
+
+/* Featured Articles Grid */
+#featured-articles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+#featured-articles article {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+#featured-articles article > * {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  #featured-articles article {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section Padding Helpers */
+section[style*="background-color: var(--color-bg-elevated)"],
+section[style*="background-color: var(--color-bg-secondary)"],
+section[style*="background-color: var(--color-bg-dark)"] {
+  margin: 0;
+  width: 100%;
+}
+
+section[style*="padding: var(--space-2xl)"] .container {
+  padding: 0 var(--space-lg);
+}
+
 /* Print Styles */
 @media print {
   header,
