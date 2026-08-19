@@ -87,17 +87,21 @@
       </div>
     </section>
     
-    <!-- Featured Field Notes -->
+    <!-- Latest from Field Notes -->
     <section style="background-color: var(--color-bg-elevated); padding: var(--space-2xl) var(--space-lg); margin-bottom: var(--space-2xl);">
       <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-lg); gap: var(--space-lg);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-xl); gap: var(--space-lg);">
           <h2 style="margin: 0;">Latest from Field Notes</h2>
-          <a href="field-notes/" class="btn btn-secondary" style="white-space: nowrap;">Browse All →</a>
+          <a href="field-notes/" class="btn btn-secondary" style="white-space: nowrap; display: none;" id="browse-all-desktop">Browse All →</a>
         </div>
         <div id="featured-articles" style="margin-bottom: 0;">
           <!-- Populated by JavaScript -->
         </div>
+        <div style="text-align: center; margin-top: var(--space-xl);">
+          <a href="field-notes/" class="btn btn-secondary" id="browse-all-mobile">Browse All →</a>
+        </div>
       </div>
+    </section>
     </section>
     
     <!-- Experience You Can Count On -->
@@ -110,144 +114,72 @@
             <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Performing throughout Northwest Ohio across restaurants, wineries, churches, weddings, festivals, and community events.</p>
           </div>
           <div>
-            <h4 style="color: var(--color-accent-copper); margin-bottom: var(--space-sm); font-size: 1rem;">Venue Operator & Music Booker</h4>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Understand what venues and event planners actually need from a professional performer.</p>
+            <h4 style="color: var(--color-accent-copper); margin-bottom: var(--space-sm); font-size: 1rem;">Sound Engineer</h4>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Professional audio setup, mixing, and live sound management for a range of live-performance situations.</p>
           </div>
           <div>
-            <h4 style="color: var(--color-accent-copper); margin-bottom: var(--space-sm); font-size: 1rem;">Sound Engineer</h4>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Professional audio setup, mixing, and live sound management for various venue sizes.</p>
+            <h4 style="color: var(--color-accent-copper); margin-bottom: var(--space-sm); font-size: 1rem;">Venue Operator & Music Booker</h4>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Firsthand understanding of what venues and event planners actually need from a professional performer.</p>
           </div>
           <div>
             <h4 style="color: var(--color-accent-copper); margin-bottom: var(--space-sm); font-size: 1rem;">Business Owner</h4>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Founder of Frank Creations LLC, handling the business side of music professionally.</p>
-          </div>
-          <div>
-            <h4 style="color: var(--color-accent-copper); margin-bottom: var(--space-sm); font-size: 1rem;">Diverse Event Experience</h4>
-            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Performer for restaurants, wineries, weddings, churches, festivals, and community events.</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Founder of Frank Creations LLC, with firsthand experience balancing performance, production, booking, and business operations.</p>
           </div>
         </div>
       </div>
     </section>
     
-    <!-- What's Here -->
+    <!-- Hire Devin / Event Types -->
     <section style="background-color: var(--color-bg-elevated); padding: var(--space-2xl) var(--space-lg); margin-bottom: var(--space-2xl);">
       <div class="container">
-        <h2 style="margin-bottom: var(--space-sm);">What's Here</h2>
-        <p style="font-size: 0.95rem; margin-bottom: var(--space-xl); color: var(--color-text-secondary); max-width: 700px;">
-          This site covers four core areas of working musician life.
-        </p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-xl); max-width: 1000px;">
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Live Performance</h3>
-            <p style="color: var(--color-text-secondary); line-height: 1.6;">Real gig experiences, show preparation, setlists, audience interaction, venue lessons, and performance workflows.</p>
-          </div>
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Gear & Technology</h3>
-            <p style="color: var(--color-text-secondary); line-height: 1.6;">Real-world use of keyboards, mixers, speakers, pedals, apps, MIDI, backing tracks, and live-performance tools.</p>
-          </div>
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Sound & Production</h3>
-            <p style="color: var(--color-text-secondary); line-height: 1.6;">Practical sound reinforcement, setup strategy, volume management, routing, monitoring, and troubleshooting.</p>
-          </div>
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">The Business of Music</h3>
-            <p style="color: var(--color-text-secondary); line-height: 1.6;">Pricing, marketing, scheduling, professionalism, client communication, and balancing music with entrepreneurship.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- For Venues and Events -->
-    <section style="background-color: var(--color-bg-secondary); padding: var(--space-2xl) var(--space-lg); margin-bottom: var(--space-2xl);">
-      <div class="container">
-        <h2 style="margin-bottom: var(--space-lg);">For Venues and Events</h2>
+        <h2 style="margin-bottom: var(--space-lg);">Hire Devin</h2>
+        <p style="max-width: 800px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-xl);">Professional solo performances on piano or acoustic guitar, tailored to the room, audience, and purpose of the event.</p>
+        
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); max-width: 1000px; margin-bottom: var(--space-xl);">
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Professional and Prepared</h3>
-            <p style="color: var(--color-text-secondary); line-height: 1.6;">Reliable arrival, efficient setup, and polished sound included. Thorough preparation for every performance.</p>
-          </div>
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Built for the Room</h3>
-            <p style="color: var(--color-text-secondary); line-height: 1.6;">Volume, pacing, and song selection adjusted to the venue and audience. I read the space and shape the energy accordingly.</p>
-          </div>
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Piano or Acoustic Guitar</h3>
-            <p style="color: var(--color-text-secondary); line-height: 1.6;">A flexible setup for restaurants, wineries, churches, weddings, and community events. Choose what fits your space.</p>
-          </div>
-          <div>
-            <h3 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Familiar, Adaptable Repertoire</h3>
-            <p style="color: var(--color-text-secondary); line-height: 1.6;">Recognizable songs shaped around the energy and purpose of the event. From background ambiance to engaging performances.</p>
-          </div>
-        </div>
-        <div style="text-align: center;">
-          <a href="hire-devin.html" class="btn btn-primary">Explore Booking →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Types of Events -->
-    <section style="background-color: var(--color-bg-elevated); padding: var(--space-2xl) var(--space-lg); margin-bottom: var(--space-2xl);">
-      <div class="container">
-        <h2 style="margin-bottom: var(--space-lg);">Types of Events</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); max-width: 1000px;">
           <div class="card">
             <h3 style="font-size: 1.25rem; margin-top: 0; margin-bottom: var(--space-md);">Restaurants & Wineries</h3>
             <p style="color: var(--color-text-secondary); margin-bottom: var(--space-md);">Relaxed background music or featured performance for dining rooms, patios, and tasting rooms.</p>
-            <a href="restaurants-wineries.html" style="color: var(--color-accent-copper); font-weight: 500;">Learn more →</a>
+            <a href="restaurants-wineries.html" style="color: var(--color-accent-copper); font-weight: 500;">Learn More →</a>
           </div>
           <div class="card">
             <h3 style="font-size: 1.25rem; margin-top: 0; margin-bottom: var(--space-md);">Weddings & Events</h3>
             <p style="color: var(--color-text-secondary); margin-bottom: var(--space-md);">Ceremony music, cocktail hour entertainment, and dinner ambiance. Special songs learned upon request.</p>
-            <a href="weddings.html" style="color: var(--color-accent-copper); font-weight: 500;">Learn more →</a>
+            <a href="weddings.html" style="color: var(--color-accent-copper); font-weight: 500;">Learn More →</a>
           </div>
           <div class="card">
             <h3 style="font-size: 1.25rem; margin-top: 0; margin-bottom: var(--space-md);">Churches</h3>
             <p style="color: var(--color-text-secondary); margin-bottom: var(--space-md);">Special music for services, worship support, and faith-centered community events.</p>
-            <a href="churches.html" style="color: var(--color-accent-copper); font-weight: 500;">Learn more →</a>
+            <a href="churches.html" style="color: var(--color-accent-copper); font-weight: 500;">Learn More →</a>
           </div>
           <div class="card">
             <h3 style="font-size: 1.25rem; margin-top: 0; margin-bottom: var(--space-md);">Festivals & Community</h3>
             <p style="color: var(--color-text-secondary); margin-bottom: var(--space-md);">Fairs, markets, park concerts, and local celebrations with professional sound.</p>
-            <a href="festivals.html" style="color: var(--color-accent-copper); font-weight: 500;">Learn more →</a>
+            <a href="festivals.html" style="color: var(--color-accent-copper); font-weight: 500;">Learn More →</a>
           </div>
         </div>
-      </div>
-    </section>
-    
-    <!-- Instruments -->
-    <section style="background-color: var(--color-bg-secondary); padding: var(--space-2xl) var(--space-lg); margin-bottom: var(--space-2xl);">
-      <div class="container">
-        <h2 style="margin-bottom: var(--space-lg);">Piano or Acoustic Guitar</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl); max-width: 1000px;">
-          <div style="padding: var(--space-lg); background-color: var(--color-bg-elevated); border-radius: var(--border-radius); border: 1px solid var(--color-border-light);">
-            <h3 style="font-size: 1.25rem; margin-top: 0; margin-bottom: var(--space-md); color: var(--color-accent-copper);">Piano</h3>
-            <p style="color: var(--color-text-secondary); margin-bottom: 0; line-height: 1.6;">Rich, full sound suited to dining rooms, churches, ceremonies, and sophisticated environments.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); max-width: 1000px; margin-bottom: var(--space-xl); background-color: var(--color-bg-primary); padding: var(--space-lg); border-radius: var(--border-radius);">
+          <div style="text-align: center;">
+            <p style="margin: 0; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-copper);">Professional Sound</p>
+            <p style="margin: 0; font-size: 0.85rem; color: var(--color-text-secondary);">Setup included</p>
           </div>
-          <div style="padding: var(--space-lg); background-color: var(--color-bg-elevated); border-radius: var(--border-radius); border: 1px solid var(--color-border-light);">
-            <h3 style="font-size: 1.25rem; margin-top: 0; margin-bottom: var(--space-md); color: var(--color-accent-copper);">Acoustic Guitar</h3>
-            <p style="color: var(--color-text-secondary); margin-bottom: 0; line-height: 1.6;">Warm, familiar sound suited to patios, festivals, casual gatherings, and interactive sets.</p>
+          <div style="text-align: center;">
+            <p style="margin: 0; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-copper);">Venue-Conscious Volume</p>
+            <p style="margin: 0; font-size: 0.85rem; color: var(--color-text-secondary);">Tailored to space</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="margin: 0; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-copper);">Piano or Acoustic Guitar</p>
+            <p style="margin: 0; font-size: 0.85rem; color: var(--color-text-secondary);">Your choice</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="margin: 0; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-copper);">Familiar, Adaptable Repertoire</p>
+            <p style="margin: 0; font-size: 0.85rem; color: var(--color-text-secondary);">Built for the room</p>
           </div>
         </div>
-      </div>
-    </section>
-    
-    <!-- Featured Music Preview -->
-    <section style="background-color: var(--color-bg-elevated); padding: var(--space-2xl) var(--space-lg); margin-bottom: var(--space-2xl);">
-      <div class="container">
-        <h2 style="margin-bottom: var(--space-lg);">Familiar Music Across Generations</h2>
-        <p style="max-width: 800px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-xl);">A flexible mix of classic rock, country, pop, singer-songwriter favorites, and audience requests—from Billy Joel and Elton John to Tom Petty, Dolly Parton, and modern acoustic favorites.</p>
-        <a href="songs.html" class="btn btn-secondary">Browse the Full Song List →</a>
-      </div>
-    </section>
-    
-    <!-- Currently Exploring -->
-    <section style="background-color: var(--color-bg-secondary); padding: var(--space-xl) var(--space-lg); margin-bottom: var(--space-2xl); border-top: 1px solid var(--color-border-light); border-bottom: 1px solid var(--color-border-light);">
-      <div class="container" style="max-width: var(--max-width-narrow);">
-        <h3 style="margin-bottom: var(--space-md); font-size: 1.25rem;">Currently Exploring</h3>
-        <p style="font-size: 0.95rem; margin-bottom: var(--space-md); color: var(--color-text-secondary);">
-          MIDI automation, Jamzone backing tracks, keyboard sound design, and a faster solo-performance setup.
-        </p>
-        <p style="margin-bottom: 0;"><a href="field-notes/" style="color: var(--color-accent-copper); text-decoration: none; font-weight: 500;">Follow the experiments in Field Notes →</a></p>
+        
+        <div style="text-align: center;">
+          <a href="hire-devin.html" class="btn btn-primary">Explore Booking →</a>
+        </div>
       </div>
     </section>
     
@@ -364,40 +296,52 @@
     // Render featured articles (up to 3 most recent)
     function renderFeaturedArticles() {
       const container = document.getElementById('featured-articles');
+      const browseDesktop = document.getElementById('browse-all-desktop');
       if (!container || typeof articles === 'undefined' || articles.length === 0) return;
       
-      // Show up to 3 most recent articles
+      // Show the most recent article
       const featured = articles
         .sort((a, b) => new Date(b.publication_date) - new Date(a.publication_date))
-        .slice(0, 3);
+        .slice(0, 1);
       
       if (featured.length === 0) return;
       
-      const gridClass = featured.length === 1 ? 'style="max-width: 750px; margin: 0 auto;"' : 'style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);"';
+      // Show Browse All button on desktop when article is displayed
+      if (browseDesktop) browseDesktop.style.display = 'block';
+      
+      const article = featured[0];
+      const pubDate = new Date(article.publication_date).toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
       
       container.innerHTML = `
-        <div ${gridClass}>
-          ${featured.map(article => `
-            <article style="border: 1px solid var(--color-border); border-radius: var(--border-radius); padding: var(--spacing-lg);">
-              <div style="display: flex; gap: var(--space-md); margin-bottom: var(--space-md); font-size: 0.9rem; color: var(--color-text-secondary);">
-                <span>${article.category}</span>
-                <span>•</span>
-                <span>${new Date(article.publication_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                <span>•</span>
-                <span>${article.reading_time} min read</span>
-              </div>
-              <h3 style="margin: 0 0 var(--space-md) 0; font-size: 1.1rem; line-height: 1.4;">
-                <a href="${article.preview_html}" style="color: var(--color-text-primary); text-decoration: none;">
-                  ${article.title}
-                </a>
-              </h3>
-              <p style="color: var(--color-text-secondary); font-size: 0.95rem; margin: 0 0 var(--space-lg) 0;">
-                ${article.excerpt}
-              </p>
+        <article style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: stretch; max-width: 1000px; margin: 0 auto;">
+          <div style="display: flex; align-items: center; overflow: hidden; border-radius: var(--border-radius);">
+            <img src="${article.featured_image}" alt="${article.featured_image_alt}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: flex-start;">
+            <div style="display: flex; gap: var(--space-md); margin-bottom: var(--space-lg); font-size: 0.9rem; color: var(--color-text-secondary); flex-wrap: wrap;">
+              <span>${article.category}</span>
+              <span>•</span>
+              <span>${pubDate}</span>
+              <span>•</span>
+              <span>${article.reading_time} min read</span>
+            </div>
+            <h3 style="margin: 0 0 var(--space-md) 0; font-size: 1.5rem; line-height: 1.3; color: var(--color-text-primary);">
+              <a href="${article.preview_html}" style="color: var(--color-text-primary); text-decoration: none;">
+                ${article.title}
+              </a>
+            </h3>
+            <p style="color: var(--color-text-secondary); font-size: 0.95rem; margin: 0 0 var(--space-lg) 0; line-height: 1.6;">
+              ${article.excerpt}
+            </p>
+            <div>
               <a href="${article.preview_html}" class="btn btn-primary" style="display: inline-block;">Read Article</a>
-            </article>
-          `).join('')}
-        </div>
+            </div>
+          </div>
+        </article>
       `;
     }
     
