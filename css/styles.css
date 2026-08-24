@@ -417,16 +417,22 @@ nav {
   flex-wrap: wrap;
 }
 
-/* Content Container */
+/* Content Container - Site-wide centered layout */
+.site-container {
+  width: min(100% - (2 * var(--space-lg)), 1200px);
+  margin-inline: auto;
+}
+
 .container {
-  max-width: var(--max-width-container);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
+  width: min(calc(100% - 2 * var(--space-lg)), 1200px);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
 }
 
 section {
   margin-bottom: var(--space-2xl);
-  padding: var(--space-xl) var(--space-lg);
+  padding: var(--space-xl) 0;
 }
 
 .section-light {

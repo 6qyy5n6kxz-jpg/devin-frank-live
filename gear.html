@@ -18,16 +18,65 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='90' font-family='serif' font-weight='bold' fill='%23d4a574'>♪</text></svg>">
   
   <style>
+    /* Gear Page - Centered Container System */
+    .gear-page-intro,
+    .gear-filter-section,
+    .gear-grid-section {
+      width: min(calc(100% - 2 * var(--space-lg)), 1200px);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    
+    /* Gear Page Intro */
+    .gear-page-intro {
+      padding-top: var(--space-xl);
+      padding-bottom: var(--space-lg);
+    }
+    
+    .gear-page-intro h1 {
+      margin-bottom: var(--space-sm);
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    .gear-page-intro > p:first-of-type {
+      font-size: 1.05rem;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-md);
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    .gear-page-intro > p:last-of-type {
+      color: var(--color-text-secondary);
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    /* Filter Section */
+    .gear-filter-section {
+      padding-bottom: var(--space-lg);
+    }
+    
+    .gear-filter-section h2 {
+      font-size: 1rem;
+      margin-bottom: var(--space-md);
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
     .gear-filters {
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-md);
-      margin-bottom: var(--space-xl);
     }
     
     .gear-filter {
       display: inline-block;
-      padding: var(--space-sm) var(--space-md);
+      padding: var(--space-xs) var(--space-md);
       background: var(--color-bg-secondary);
       border: 1px solid var(--color-border);
       border-radius: 20px;
@@ -45,21 +94,26 @@
       border-color: var(--color-accent-copper);
     }
     
+    /* Gear Grid */
+    .gear-grid-section {
+      padding-bottom: var(--space-2xl);
+    }
+    
     .gear-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: var(--space-lg);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
       margin-bottom: var(--space-2xl);
     }
     
     .gear-card {
       border: 1px solid var(--color-border-light);
       border-radius: var(--border-radius-lg);
-      overflow: hidden;
       transition: all var(--transition-base);
       display: flex;
       flex-direction: column;
       background-color: var(--color-bg-elevated);
+      overflow: hidden;
     }
     
     .gear-card:hover {
@@ -67,17 +121,28 @@
       border-color: var(--color-accent-copper);
     }
     
-    .gear-card-image {
+    /* Gear Card Image Container */
+    .gear-card-image-container {
       width: 100%;
-      height: 180px;
-      background: linear-gradient(135deg, var(--color-accent-copper), var(--color-accent-gold));
+      height: 220px;
+      background-color: #F9F7F3;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--color-text-secondary);
-      font-size: 2.5rem;
+      flex-shrink: 0;
+      overflow: hidden;
     }
     
+    .gear-card-image {
+      max-width: 82%;
+      max-height: 82%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    
+    /* Gear Card Content */
     .gear-card-content {
       padding: var(--space-lg);
       flex: 1;
@@ -104,7 +169,7 @@
       padding: var(--space-xs) var(--space-sm);
       font-size: 0.75rem;
       border-radius: var(--border-radius);
-      margin-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
     }
     
     .gear-card-status.current {
@@ -123,10 +188,11 @@
     }
     
     .gear-card-title {
-      font-size: 1rem;
+      font-family: var(--font-family-serif);
+      font-size: 1.125rem;
+      font-weight: 600;
       margin: 0 0 var(--space-sm) 0;
       line-height: 1.4;
-      flex: 1;
       color: var(--color-text-primary);
     }
     
@@ -137,17 +203,146 @@
       line-height: 1.5;
     }
     
-    .gear-card-why {
+    .gear-card-divider {
       border-top: 1px solid var(--color-border-light);
-      padding-top: var(--space-md);
+      margin: var(--space-md) 0;
+    }
+    
+    .gear-card-why {
       font-size: 0.9rem;
       color: var(--color-text-secondary);
+      line-height: 1.5;
+      flex: 1;
     }
     
     .gear-card-why strong {
       color: var(--color-text-primary);
       display: block;
       margin-bottom: var(--space-xs);
+      font-weight: 600;
+    }
+    
+    /* Learn More CTA Section */
+    .learn-more-section {
+      background-color: rgba(169, 104, 58, 0.05);
+      padding: 3rem var(--space-lg);
+      margin: var(--space-2xl) auto;
+      border-radius: var(--border-radius-lg);
+      width: min(calc(100% - 2 * var(--space-lg)), 1200px);
+    }
+    
+    .learn-more-container {
+      max-width: var(--max-width-reading);
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .learn-more-section h2 {
+      margin-top: 0;
+      margin-bottom: var(--space-lg);
+    }
+    
+    .learn-more-section p {
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .learn-more-link {
+      display: inline-block;
+      color: var(--color-accent-copper);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    
+    .learn-more-link:hover {
+      color: var(--color-accent-copper-hover);
+    }
+    
+    /* Responsive - Tablet (768px and below) */
+    @media (max-width: 768px) {
+      .gear-page-intro,
+      .gear-filter-section,
+      .gear-grid-section {
+        width: min(calc(100% - 2 * var(--space-md)), 1200px);
+      }
+      
+      .gear-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+      
+      .gear-filter-section h2 {
+        font-size: 0.95rem;
+      }
+      
+      .gear-card-image-container {
+        height: 180px;
+      }
+      
+      .learn-more-section {
+        width: min(calc(100% - 2 * var(--space-md)), 1200px);
+        padding: 2.5rem var(--space-md);
+        margin: var(--space-2xl) auto;
+      }
+      
+      .learn-more-section h2 {
+        font-size: 1.25rem;
+      }
+    }
+    
+    /* Responsive - Mobile (480px and below) */
+    @media (max-width: 480px) {
+      .gear-page-intro,
+      .gear-filter-section,
+      .gear-grid-section {
+        width: min(calc(100% - 2 * var(--space-md)), 1200px);
+      }
+      
+      .gear-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .gear-filter-section h2 {
+        font-size: 0.9rem;
+      }
+      
+      .gear-card {
+        padding: 0;
+      }
+      
+      .gear-card-content {
+        padding: var(--space-md);
+      }
+      
+      .gear-card-image-container {
+        height: 160px;
+      }
+      
+      .gear-filters {
+        gap: var(--space-sm);
+      }
+      
+      .gear-filter {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: 0.85rem;
+      }
+      
+      .learn-more-section {
+        width: min(calc(100% - 2 * var(--space-md)), 1200px);
+        padding: 2rem var(--space-md);
+        margin: var(--space-xl) auto;
+        border-radius: var(--border-radius);
+      }
+      
+      .learn-more-section h2 {
+        font-size: 1.125rem;
+      }
+      
+      .learn-more-section p {
+        font-size: 0.95rem;
+      }
     }
   </style>
   
@@ -184,18 +379,14 @@
   </header>
   
   <main id="main-content">
-    <section class="container" style="margin-top: var(--space-xl);">
+    <section class="gear-page-intro">
       <h1>Gear Directory</h1>
-      <p style="font-size: 1.1rem; color: var(--color-text-secondary);">
-        Keyboards, mixers, speakers, and tools I use for live performance.
-      </p>
-      <p style="color: var(--color-text-secondary); margin-top: var(--space-md);">
-        Real-world use, honest observations, and practical insights. This isn't a buyer's guide—it's a working musician's documentation of what works for solo performances.
-      </p>
+      <p>Keyboards, mixers, speakers, and tools I use for live performance.</p>
+      <p>Real-world use, honest observations, and practical insights. This isn't a buyer's guide—it's a working musician's documentation of what works for solo performances.</p>
     </section>
 
     <!-- Filters -->
-    <section class="container">
+    <section class="gear-filter-section">
       <h2>Filter by Category</h2>
       <div class="gear-filters">
         <button class="gear-filter active" data-filter="all">All Gear</button>
@@ -209,18 +400,19 @@
     </section>
 
     <!-- Gear Grid -->
-    <section class="container">
+    <section class="gear-grid-section">
       <div id="gear-container" class="gear-grid">
         <!-- Populated by JavaScript -->
       </div>
     </section>
 
     <!-- Related Reading -->
-    <section class="container" style="background-color: rgba(212, 165, 116, 0.05); padding: var(--spacing-xl) var(--spacing-lg); border-radius: var(--border-radius); margin: var(--spacing-2xl) var(--spacing-lg);">
-      <h2>Learn More in Field Notes</h2>
-      <p>
-        Want to understand the real-world setup and workflows? <a href="field-notes/">Read the Field Notes</a> for articles about building a portable rig, keyboard selection, and integrating gear into live performances.
-      </p>
+    <section class="learn-more-section">
+      <div class="learn-more-container">
+        <h2>Learn More in Field Notes</h2>
+        <p>Want to understand how this gear actually works in the real world? Read the Field Notes for articles about gear, live sound, performance systems, and lessons learned from actual gigs.</p>
+        <a href="field-notes/" class="learn-more-link">Read the Field Notes →</a>
+      </div>
     </section>
   </main>
   
@@ -297,12 +489,15 @@
         
         return `
           <div class="gear-card">
-            <div class="gear-card-image">⚙️</div>
+            <div class="gear-card-image-container">
+              <img src="${item.image}" alt="${item.imageAlt}" class="gear-card-image" loading="lazy">
+            </div>
             <div class="gear-card-content">
               <div class="gear-card-brand">${item.brand}</div>
               <div class="gear-card-status ${statusClass}">${statusLabel}</div>
               <h3 class="gear-card-title">${item.name}</h3>
               <p class="gear-card-summary">${item.summary}</p>
+              <div class="gear-card-divider"></div>
               <div class="gear-card-why">
                 <strong>Why I use it:</strong>
                 ${item.why_i_use_it}
