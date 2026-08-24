@@ -58,12 +58,15 @@
     
     /* Filter Section */
     .gear-filter-section {
+      padding-top: 0;
       padding-bottom: var(--space-lg);
+      margin-top: -0.5rem;
     }
     
     .gear-filter-section h2 {
       font-size: 1rem;
       margin-bottom: var(--space-md);
+      margin-top: 0;
       margin-left: 0;
       margin-right: 0;
     }
@@ -131,6 +134,7 @@
       justify-content: center;
       flex-shrink: 0;
       overflow: hidden;
+      border-bottom: 1px solid rgba(215, 207, 196, 0.4);
     }
     
     .gear-card-image {
@@ -140,6 +144,41 @@
       height: auto;
       object-fit: contain;
       display: block;
+    }
+    
+    /* Per-product image sizing modifiers */
+    /* Tall products: EV Evolve 50M (column speaker) */
+    .gear-card[data-product-id="ev-evolve-50m"] .gear-card-image {
+      max-width: 90%;
+      max-height: 90%;
+    }
+    
+    /* Wide/keyboard-sized products */
+    .gear-card[data-product-id="numa-x-piano-73"] .gear-card-image,
+    .gear-card[data-product-id="yamaha-p-225"] .gear-card-image {
+      max-width: 85%;
+      max-height: 85%;
+    }
+    
+    /* Compact/square products: mixers, speakers, controllers */
+    .gear-card[data-product-id="allen-heath-cq-20b"] .gear-card-image,
+    .gear-card[data-product-id="ev-pxm-12mp"] .gear-card-image {
+      max-width: 80%;
+      max-height: 80%;
+    }
+    
+    /* Guitars: full visibility */
+    .gear-card[data-product-id="taylor-gs-mini-e-koa"] .gear-card-image,
+    .gear-card[data-product-id="ibanez-as80"] .gear-card-image {
+      max-width: 88%;
+      max-height: 88%;
+    }
+    
+    /* Small/software images: moderate scaling */
+    .gear-card[data-product-id="onsong"] .gear-card-image,
+    .gear-card[data-product-id="jamzone"] .gear-card-image {
+      max-width: 75%;
+      max-height: 75%;
     }
     
     /* Gear Card Content */
@@ -488,7 +527,7 @@
         }
         
         return `
-          <div class="gear-card">
+          <div class="gear-card" data-product-id="${item.id}">
             <div class="gear-card-image-container">
               <img src="${item.image}" alt="${item.imageAlt}" class="gear-card-image" loading="lazy">
             </div>
