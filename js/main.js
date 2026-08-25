@@ -52,6 +52,20 @@ function formatDate(dateString) {
   });
 }
 
+// Extract month and day for card display
+function getDateParts(dateString) {
+  const date = new Date(dateString + 'T00:00:00');
+  const month = date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+  const day = date.getDate();
+  return { month, day };
+}
+
+// Format performer name for badge display
+function formatPerformerBadge(performer) {
+  if (!performer) return null;
+  return performer.toUpperCase();
+}
+
 // Compare dates (for sorting events)
 function compareDates(dateString1, dateString2) {
   const date1 = new Date(dateString1);
@@ -92,30 +106,50 @@ function renderEvents() {
   }
   
   eventsContainer.innerHTML = publicEvents.map(event => {
-    let venueHtml = `<span class="event-venue">${event.venue}</span>`;
-    if (event.venueUrl) {
-      venueHtml = `<a href="${event.venueUrl}" target="_blank" rel="noopener noreferrer" class="event-venue">${event.venue}</a>`;
+    const { month, day } = getDateParts(event.date);
+    
+    // Build performer badge HTML
+    let performerBadgeHtml = '';
+    if (event.performer) {
+      const performerDisplay = formatPerformerBadge(event.performer);
+      performerBadgeHtml = `<div class="event-performer-badge">${performerDisplay}</div>`;
     }
     
+    // Build venue HTML (with optional link)
+    let venueHtml = `<span class="event-venue-title">${event.venue}</span>`;
+    if (event.venueUrl) {
+      venueHtml = `<a href="${event.venueUrl}" target="_blank" rel="noopener noreferrer" class="event-venue-title event-venue-link">${event.venue}</a>`;
+    }
+    
+    // Build tickets button
     let ticketsHtml = '';
     if (event.ticketsUrl) {
-      ticketsHtml = `<a href="${event.ticketsUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary" style="margin-top: var(--spacing-md);">Get Tickets</a>`;
+      ticketsHtml = `<a href="${event.ticketsUrl}" target="_blank" rel="noopener noreferrer" class="event-action-link">Get Tickets →</a>`;
     }
     
     return `
       <div class="event-card">
-        <div class="event-header">
-          <div>
-            <div class="event-date">${formatDate(event.date)}</div>
-            <div class="event-location">${event.time} · ${event.city}</div>
+        <div class="event-card-container">
+          <div class="event-date-column">
+            <div class="event-date-month">${month}</div>
+            <div class="event-date-day">${day}</div>
           </div>
-          <span class="event-type">${event.eventType}</span>
+          <div class="event-content-column">
+            ${performerBadgeHtml}
+            <div class="event-venue-section">
+              ${venueHtml}
+            </div>
+            <div class="event-meta">
+              <span class="event-time">${event.time}</span>
+              <span class="event-separator">·</span>
+              <span class="event-city">${event.city}</span>
+            </div>
+            ${event.description ? `<p class="event-description">${event.description}</p>` : ''}
+            <div class="event-actions">
+              ${ticketsHtml}
+            </div>
+          </div>
         </div>
-        <div>
-          ${venueHtml}
-        </div>
-        ${event.description ? `<p style="margin-top: var(--spacing-md); color: var(--color-text-secondary);">${event.description}</p>` : ''}
-        ${ticketsHtml}
       </div>
     `;
   }).join('');
