@@ -424,10 +424,11 @@ nav {
 }
 
 .container {
-  width: min(calc(100% - 2 * var(--space-lg)), 1200px);
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
+  width: 100%;
+  max-width: var(--max-width-container);
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 64px);
+  box-sizing: border-box;
 }
 
 section {
