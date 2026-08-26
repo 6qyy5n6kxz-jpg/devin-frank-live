@@ -89,9 +89,15 @@ function renderEvents() {
     return;
   }
   
-  // Filter public events and sort by date
+  // Get today's date in YYYY-MM-DD format for comparison
+  const today = new Date();
+  const todayString = today.getFullYear() + '-' + 
+                      String(today.getMonth() + 1).padStart(2, '0') + '-' + 
+                      String(today.getDate()).padStart(2, '0');
+  
+  // Filter public events, exclude past events, and sort by date
   const publicEvents = events
-    .filter(event => event.isPublic !== false)
+    .filter(event => event.isPublic !== false && event.date >= todayString)
     .sort((a, b) => compareDates(a.date, b.date));
   
   if (publicEvents.length === 0) {
