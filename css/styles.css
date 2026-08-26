@@ -111,24 +111,24 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-serif);
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 0;
   color: var(--color-text-primary);
 }
 
 h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--space-lg);
 }
 
 h2 {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: clamp(16px, 2vw, 20px);
 }
 
 h3 {
   font-size: 1.5rem;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: clamp(8px, 1vw, 12px);
 }
 
 h4 {
@@ -136,7 +136,7 @@ h4 {
 }
 
 p {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: clamp(12px, 1.5vw, 16px);
 }
 
 a {
@@ -432,7 +432,7 @@ nav {
 }
 
 section {
-  margin-bottom: var(--space-2xl);
+  margin-bottom: 0;
   padding: var(--space-xl) 0;
 }
 
@@ -467,29 +467,62 @@ section {
 }
 
 /* Cards & Components */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 3vw, 32px);
+  margin-bottom: 0;
+}
+
 .card {
   background-color: var(--color-bg-elevated);
   border: 1px solid var(--color-border-light);
-  border-radius: var(--border-radius-lg);
-  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+  padding: clamp(24px, 3vw, 28px);
   transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
   border-color: var(--color-accent-copper);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   transform: translateY(-2px);
 }
 
 .card h3 {
   margin-top: 0;
+  margin-bottom: clamp(12px, 1.5vw, 16px);
+  font-size: 1.1rem;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-lg);
-  margin-bottom: var(--space-lg);
+.card p {
+  margin-bottom: 0;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  line-height: var(--line-height-normal);
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 2.5vw, 24px);
+  }
+  
+  .card {
+    padding: clamp(20px, 2.5vw, 24px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(16px, 2vw, 20px);
+  }
+  
+  .card {
+    padding: clamp(18px, 2vw, 22px);
+  }
 }
 
 /* Reading Container */
@@ -1468,74 +1501,97 @@ section[style*="padding: var(--space-2xl)"] .container {
 
 /* About intro section - establishes visual tone */
 .about-intro {
-  padding: var(--space-xl) 0;
+  padding-block: clamp(44px, 6vw, 72px);
+  background-color: var(--color-bg-primary);
+}
+
+.about-intro h1 {
+  margin-bottom: var(--space-lg);
 }
 
 .about-intro-text {
   font-size: 1.1rem;
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-lg) !important;
+  margin-bottom: var(--space-md);
+}
+
+.about-intro p {
+  max-width: var(--max-width-reading);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: 0;
 }
 
 /* Standard content sections with consistent spacing */
 .about-content-section {
-  padding: clamp(var(--space-xl), 8vw, var(--space-2xl)) 0;
-  border-bottom: 1px solid var(--color-border-light);
-}
-
-.about-content-section:last-of-type {
-  border-bottom: none;
+  padding-block: clamp(44px, 6vw, 72px);
+  background-color: var(--color-bg-primary);
 }
 
 .about-content-section h2 {
-  margin-bottom: var(--space-lg);
+  margin-bottom: clamp(16px, 2vw, 20px);
+  margin-top: 0;
 }
 
 .about-content-section p {
   max-width: var(--max-width-reading);
   line-height: var(--line-height-relaxed);
+  margin-bottom: clamp(12px, 1.5vw, 16px);
+  font-size: 1rem;
+  color: var(--color-text-primary);
 }
 
-.about-content-section p + p {
-  margin-top: var(--space-md);
+.about-content-section p:last-of-type {
+  margin-bottom: 0;
 }
 
-/* Principles section - highlighted block with grid layout */
+.about-content-section p[style*="margin-top"] {
+  margin-top: clamp(20px, 2.5vw, 28px);
+  margin-bottom: 0;
+}
+
+/* Principles section - compact grid layout with subtle background */
 .about-principles-section {
-  padding: clamp(var(--space-xl), 8vw, var(--space-2xl)) 0;
-  border-bottom: 1px solid var(--color-border-light);
+  padding-block: clamp(44px, 6vw, 72px);
+  background-color: rgba(212, 165, 116, 0.04);
+}
+
+.about-principles-section h2 {
+  margin-bottom: clamp(12px, 1.5vw, 16px);
+  margin-top: 0;
 }
 
 .about-principles-intro {
   max-width: var(--max-width-reading);
-  margin-bottom: var(--space-xl);
+  margin-bottom: clamp(28px, 3vw, 36px);
   line-height: var(--line-height-relaxed);
+  font-size: 1rem;
+  color: var(--color-text-primary);
 }
 
 .principles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-lg);
-  margin-top: var(--space-lg);
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 3vw, 32px);
+  margin-top: 0;
 }
 
 .principle-card {
-  background-color: rgba(212, 165, 116, 0.05);
-  border: 1px solid rgba(212, 165, 116, 0.15);
-  border-radius: var(--border-radius-lg);
-  padding: var(--space-lg);
+  background-color: rgba(244, 240, 232, 0.5);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  border-radius: var(--border-radius);
+  padding: clamp(24px, 3vw, 28px);
   transition: all var(--transition-base);
 }
 
 .principle-card:hover {
   border-color: var(--color-accent-copper);
   background-color: rgba(212, 165, 116, 0.08);
-  box-shadow: var(--shadow-sm);
 }
 
 .principle-card h3 {
-  font-size: 1.125rem;
-  margin-bottom: var(--space-md);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: clamp(8px, 1vw, 12px);
   margin-top: 0;
   color: var(--color-text-primary);
 }
@@ -1547,27 +1603,45 @@ section[style*="padding: var(--space-2xl)"] .container {
   margin-bottom: 0;
 }
 
-/* Expectations section - structured grid of items */
+/* Piano & Acoustic Guitar section - two-card layout */
+.about-piano-section {
+  padding-block: clamp(44px, 6vw, 72px);
+  background-color: var(--color-bg-primary);
+}
+
+.about-piano-section h2 {
+  margin-bottom: clamp(16px, 2vw, 20px);
+}
+
+.about-piano-section p {
+  max-width: var(--max-width-reading);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: clamp(24px, 3vw, 32px);
+}
+
+/* Expectations section - structured 3-column grid */
 .about-expectations-section {
-  padding: clamp(var(--space-xl), 8vw, var(--space-2xl)) 0;
-  border-bottom: 1px solid var(--color-border-light);
+  padding-block: clamp(44px, 6vw, 72px);
+  background-color: rgba(212, 165, 116, 0.04);
 }
 
 .about-expectations-section h2 {
-  margin-bottom: var(--space-xl);
+  margin-bottom: clamp(24px, 3vw, 32px);
+  margin-top: 0;
 }
 
 .expectations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 3vw, 32px);
+  row-gap: clamp(24px, 3vw, 32px);
 }
 
 .expectation-card {
-  background-color: rgba(212, 165, 116, 0.03);
-  border: 1px solid var(--color-border-light);
+  background-color: rgba(244, 240, 232, 0.5);
+  border: 1px solid rgba(212, 165, 116, 0.15);
   border-radius: var(--border-radius);
-  padding: var(--space-lg);
+  padding: clamp(24px, 2.5vw, 28px);
   transition: all var(--transition-base);
   display: flex;
   flex-direction: column;
@@ -1575,14 +1649,15 @@ section[style*="padding: var(--space-2xl)"] .container {
 
 .expectation-card:hover {
   border-color: var(--color-accent-copper);
-  background-color: rgba(212, 165, 116, 0.06);
+  background-color: rgba(212, 165, 116, 0.08);
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
 }
 
 .expectation-card h3 {
-  font-size: 1.125rem;
-  margin-bottom: var(--space-md);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: clamp(8px, 1vw, 12px);
   margin-top: 0;
   color: var(--color-text-primary);
 }
@@ -1595,89 +1670,168 @@ section[style*="padding: var(--space-2xl)"] .container {
   flex-grow: 1;
 }
 
-/* CTA section - prominent close to the page */
+/* The Music section - simple reading width */
+.about-music-section {
+  padding-block: clamp(44px, 6vw, 72px);
+  background-color: var(--color-bg-primary);
+}
+
+.about-music-section h2 {
+  margin-bottom: clamp(16px, 2vw, 20px);
+}
+
+.about-music-section p {
+  max-width: var(--max-width-reading);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: clamp(12px, 1.5vw, 16px);
+}
+
+.about-music-section p:last-of-type {
+  margin-bottom: clamp(24px, 3vw, 32px);
+}
+
+.about-music-section .btn {
+  display: inline-block;
+}
+
+/* CTA section - compact closing call to action */
 .about-cta-section {
-  padding: clamp(var(--space-xl), 8vw, var(--space-2xl)) 0;
+  padding-block: clamp(44px, 6vw, 72px);
+  background-color: var(--color-bg-primary);
 }
 
 .about-cta-block {
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--border-radius-lg);
-  padding: clamp(var(--space-lg), 5vw, var(--space-2xl));
+  background-color: rgba(212, 165, 116, 0.05);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  border-radius: var(--border-radius);
+  padding: clamp(44px, 5vw, 56px) clamp(32px, 5vw, 48px);
   text-align: center;
 }
 
 .about-cta-block h2 {
-  margin-bottom: var(--space-lg);
+  margin-bottom: clamp(16px, 2vw, 20px);
+  margin-top: 0;
 }
 
 .about-cta-block p {
   max-width: var(--max-width-reading);
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: var(--line-height-relaxed);
+  margin-bottom: clamp(24px, 3vw, 28px);
+}
+
+.about-cta-block p:last-of-type {
+  margin-bottom: 0;
 }
 
 /* Mobile responsiveness for About page */
 @media (max-width: 768px) {
   .about-intro {
-    padding: var(--space-lg) 0;
+    padding-block: clamp(36px, 5vw, 48px);
   }
   
   .about-content-section,
+  .about-piano-section,
   .about-principles-section,
   .about-expectations-section,
+  .about-music-section,
   .about-cta-section {
-    padding: clamp(var(--space-lg), 6vw, var(--space-xl)) 0;
+    padding-block: clamp(36px, 5vw, 48px);
   }
   
   .principles-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 2.5vw, 24px);
   }
   
   .expectations-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
+    gap: clamp(20px, 2.5vw, 24px);
   }
   
+  .principle-card,
   .expectation-card {
-    padding: var(--space-md);
+    padding: clamp(20px, 2.5vw, 24px);
   }
   
+  .principle-card h3,
   .expectation-card h3 {
     font-size: 1rem;
   }
   
+  .principle-card p,
   .expectation-card p {
     font-size: 0.9rem;
+  }
+  
+  .about-cta-block {
+    padding: clamp(36px, 4vw, 44px) clamp(24px, 4vw, 32px);
+  }
+}
+
+@media (max-width: 640px) {
+  .about-intro {
+    padding-block: clamp(32px, 4vw, 44px);
+  }
+  
+  .about-content-section,
+  .about-piano-section,
+  .about-principles-section,
+  .about-expectations-section,
+  .about-music-section,
+  .about-cta-section {
+    padding-block: clamp(32px, 4vw, 44px);
+  }
+  
+  .principles-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(16px, 2vw, 20px);
+  }
+  
+  .expectations-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(16px, 2vw, 20px);
+  }
+  
+  .principle-card,
+  .expectation-card {
+    padding: clamp(18px, 2vw, 22px);
+  }
+  
+  .about-cta-block {
+    padding: clamp(32px, 3vw, 40px) clamp(20px, 3vw, 28px);
   }
 }
 
 @media (max-width: 480px) {
   .about-intro {
-    padding: var(--space-md) 0;
+    padding-block: clamp(28px, 3vw, 36px);
   }
   
   .about-content-section,
+  .about-piano-section,
   .about-principles-section,
   .about-expectations-section,
+  .about-music-section,
   .about-cta-section {
-    padding: var(--space-lg) 0;
+    padding-block: clamp(28px, 3vw, 36px);
   }
   
+  .principles-grid,
   .expectations-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-md);
+    gap: clamp(16px, 2vw, 18px);
   }
   
-  .principle-card {
-    padding: var(--space-md);
+  .principle-card,
+  .expectation-card {
+    padding: clamp(16px, 2vw, 20px);
   }
   
   .about-cta-block {
-    padding: var(--space-lg);
+    padding: clamp(28px, 2.5vw, 36px) clamp(16px, 2.5vw, 24px);
   }
 }
 
