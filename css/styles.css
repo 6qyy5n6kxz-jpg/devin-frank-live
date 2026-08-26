@@ -1464,6 +1464,223 @@ section[style*="padding: var(--space-2xl)"] .container {
   padding: 0 var(--space-lg);
 }
 
+/* About Page Styles */
+
+/* About intro section - establishes visual tone */
+.about-intro {
+  padding: var(--space-xl) 0;
+}
+
+.about-intro-text {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg) !important;
+}
+
+/* Standard content sections with consistent spacing */
+.about-content-section {
+  padding: clamp(var(--space-xl), 8vw, var(--space-2xl)) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.about-content-section:last-of-type {
+  border-bottom: none;
+}
+
+.about-content-section h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.about-content-section p {
+  max-width: var(--max-width-reading);
+  line-height: var(--line-height-relaxed);
+}
+
+.about-content-section p + p {
+  margin-top: var(--space-md);
+}
+
+/* Principles section - highlighted block with grid layout */
+.about-principles-section {
+  padding: clamp(var(--space-xl), 8vw, var(--space-2xl)) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.about-principles-intro {
+  max-width: var(--max-width-reading);
+  margin-bottom: var(--space-xl);
+  line-height: var(--line-height-relaxed);
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.principle-card {
+  background-color: rgba(212, 165, 116, 0.05);
+  border: 1px solid rgba(212, 165, 116, 0.15);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-lg);
+  transition: all var(--transition-base);
+}
+
+.principle-card:hover {
+  border-color: var(--color-accent-copper);
+  background-color: rgba(212, 165, 116, 0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.principle-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-md);
+  margin-top: 0;
+  color: var(--color-text-primary);
+}
+
+.principle-card p {
+  font-size: 0.95rem;
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+}
+
+/* Expectations section - structured grid of items */
+.about-expectations-section {
+  padding: clamp(var(--space-xl), 8vw, var(--space-2xl)) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.about-expectations-section h2 {
+  margin-bottom: var(--space-xl);
+}
+
+.expectations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.expectation-card {
+  background-color: rgba(212, 165, 116, 0.03);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius);
+  padding: var(--space-lg);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.expectation-card:hover {
+  border-color: var(--color-accent-copper);
+  background-color: rgba(212, 165, 116, 0.06);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.expectation-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-md);
+  margin-top: 0;
+  color: var(--color-text-primary);
+}
+
+.expectation-card p {
+  font-size: 0.95rem;
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* CTA section - prominent close to the page */
+.about-cta-section {
+  padding: clamp(var(--space-xl), 8vw, var(--space-2xl)) 0;
+}
+
+.about-cta-block {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-lg);
+  padding: clamp(var(--space-lg), 5vw, var(--space-2xl));
+  text-align: center;
+}
+
+.about-cta-block h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.about-cta-block p {
+  max-width: var(--max-width-reading);
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.05rem;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Mobile responsiveness for About page */
+@media (max-width: 768px) {
+  .about-intro {
+    padding: var(--space-lg) 0;
+  }
+  
+  .about-content-section,
+  .about-principles-section,
+  .about-expectations-section,
+  .about-cta-section {
+    padding: clamp(var(--space-lg), 6vw, var(--space-xl)) 0;
+  }
+  
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .expectations-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+  
+  .expectation-card {
+    padding: var(--space-md);
+  }
+  
+  .expectation-card h3 {
+    font-size: 1rem;
+  }
+  
+  .expectation-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-intro {
+    padding: var(--space-md) 0;
+  }
+  
+  .about-content-section,
+  .about-principles-section,
+  .about-expectations-section,
+  .about-cta-section {
+    padding: var(--space-lg) 0;
+  }
+  
+  .expectations-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .principle-card {
+    padding: var(--space-md);
+  }
+  
+  .about-cta-block {
+    padding: var(--space-lg);
+  }
+}
+
 /* Print Styles */
 @media print {
   header,
