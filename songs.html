@@ -27,6 +27,376 @@
     ]
   }
   </script>
+  
+  <style>
+    /* Song List Page - Centered Container System */
+    .songs-page-hero,
+    .songs-filter-section,
+    .songs-results-section,
+    .songs-about-section,
+    .songs-booking-section {
+      width: min(calc(100% - 2 * var(--space-lg)), 1200px);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    
+    /* Page Hero */
+    .songs-page-hero {
+      padding-top: var(--space-xl);
+      padding-bottom: var(--space-lg);
+    }
+    
+    .songs-page-hero h1 {
+      margin-bottom: var(--space-md);
+    }
+    
+    .songs-page-hero > p {
+      font-size: 1.05rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0;
+    }
+    
+    /* Filter Section */
+    .songs-filter-section {
+      padding-top: var(--space-lg);
+      padding-bottom: var(--space-lg);
+    }
+    
+    /* Search Input */
+    .songs-search-input-group {
+      margin-bottom: var(--space-lg);
+    }
+    
+    .songs-search-input-group label {
+      display: block;
+      margin-bottom: var(--space-sm);
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-text-secondary);
+    }
+    
+    .songs-search-input {
+      width: 100%;
+      padding: var(--space-md);
+      background-color: var(--color-bg-elevated);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--border-radius);
+      font-size: var(--font-size-base);
+      color: var(--color-text-primary);
+      font-family: var(--font-family-sans);
+      transition: all var(--transition-fast);
+    }
+    
+    .songs-search-input::placeholder {
+      color: var(--color-text-light);
+    }
+    
+    .songs-search-input:focus {
+      outline: none;
+      border-color: var(--color-accent-copper);
+      box-shadow: 0 0 0 3px rgba(169, 104, 58, 0.1);
+    }
+    
+    /* Filter Groups Container */
+    .songs-filters-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .songs-filter-group {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .songs-filter-group-label {
+      display: block;
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-md);
+    }
+    
+    .songs-filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+    
+    .songs-filter-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--space-xs) var(--space-md);
+      background-color: var(--color-bg-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      cursor: pointer;
+      color: var(--color-text-primary);
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+      transition: all var(--transition-fast);
+      user-select: none;
+    }
+    
+    .songs-filter-chip:hover {
+      border-color: var(--color-accent-copper);
+      background-color: rgba(169, 104, 58, 0.05);
+    }
+    
+    .songs-filter-chip.active {
+      background-color: var(--color-accent-copper);
+      border-color: var(--color-accent-copper);
+      color: white;
+    }
+    
+    .songs-filter-chip:focus {
+      outline: 2px solid var(--color-accent-copper);
+      outline-offset: 2px;
+    }
+    
+    /* Clear Filters Button */
+    .songs-clear-filters {
+      margin-top: var(--space-md);
+      padding: 0;
+      background: none;
+      border: none;
+      color: var(--color-accent-copper);
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      transition: color var(--transition-fast);
+    }
+    
+    .songs-clear-filters:hover {
+      color: var(--color-accent-copper-hover);
+    }
+    
+    .songs-clear-filters:focus {
+      outline: 2px solid var(--color-accent-copper);
+      outline-offset: 2px;
+    }
+    
+    /* Results Counter */
+    .songs-results-counter {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-md);
+    }
+    
+    /* Results Section */
+    .songs-results-section {
+      padding-top: 0;
+      padding-bottom: var(--space-2xl);
+    }
+    
+    /* Song Table - Desktop */
+    .song-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+    
+    .song-table thead {
+      background-color: var(--color-bg-secondary);
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .song-table th {
+      padding: var(--space-md);
+      text-align: left;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      font-size: var(--font-size-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: none;
+    }
+    
+    .song-table td {
+      padding: var(--space-md);
+      border-bottom: 1px solid var(--color-border-light);
+      color: var(--color-text-primary);
+      font-size: var(--font-size-base);
+      vertical-align: middle;
+    }
+    
+    .song-table tbody tr {
+      transition: background-color var(--transition-fast);
+    }
+    
+    .song-table tbody tr:hover {
+      background-color: rgba(169, 104, 58, 0.02);
+    }
+    
+    .song-title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    
+    .song-artist {
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+    }
+    
+    .song-instrument-badge {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      background-color: rgba(169, 104, 58, 0.1);
+      color: var(--color-accent-copper);
+      font-size: var(--font-size-xs);
+      border-radius: 3px;
+      margin-right: var(--space-xs);
+      white-space: nowrap;
+    }
+    
+    /* Empty State */
+    .songs-empty-state {
+      text-align: center;
+      padding: var(--space-2xl) var(--space-lg);
+      color: var(--color-text-secondary);
+    }
+    
+    .songs-empty-state-icon {
+      font-size: 3rem;
+      margin-bottom: var(--space-md);
+      opacity: 0.3;
+    }
+    
+    .songs-empty-state h3 {
+      margin-bottom: var(--space-sm);
+    }
+    
+    .songs-empty-state p {
+      margin-bottom: var(--space-lg);
+    }
+    
+    /* About Section */
+    .songs-about-section {
+      padding-top: var(--space-2xl);
+      padding-bottom: var(--space-2xl);
+      background-color: rgba(212, 165, 116, 0.05);
+      border-radius: var(--border-radius);
+      padding-left: var(--space-lg);
+      padding-right: var(--space-lg);
+    }
+    
+    .songs-about-section h2 {
+      margin-bottom: var(--space-md);
+    }
+    
+    .songs-about-section p {
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-normal);
+    }
+    
+    .songs-about-section p + p {
+      margin-top: var(--space-lg);
+    }
+    
+    /* Booking Section */
+    .songs-booking-section {
+      padding-top: var(--space-2xl);
+      padding-bottom: var(--space-2xl);
+      text-align: center;
+    }
+    
+    .songs-booking-section h2 {
+      margin-bottom: var(--space-md);
+    }
+    
+    .songs-booking-section p {
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-base);
+      margin-bottom: var(--space-md);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .songs-booking-section p:last-of-type {
+      margin-top: var(--space-lg);
+    }
+    
+    .songs-booking-cta {
+      margin-top: var(--space-lg);
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .songs-filter-group {
+        margin-bottom: var(--space-lg);
+      }
+      
+      .songs-filters-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+      
+      .songs-filter-chips {
+        gap: 0.5rem;
+      }
+      
+      .songs-filter-chip {
+        padding: 0.3rem 0.65rem;
+        font-size: var(--font-size-xs);
+      }
+    }
+    
+    /* Mobile Results View */
+    @media (max-width: 640px) {
+      .song-table {
+        display: block;
+      }
+      
+      .song-table thead {
+        display: none;
+      }
+      
+      .song-table tbody {
+        display: block;
+      }
+      
+      .song-table tr {
+        display: block;
+        margin-bottom: var(--space-lg);
+        padding-bottom: var(--space-lg);
+        border-bottom: 1px solid var(--color-border-light);
+      }
+      
+      .song-table tr:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      
+      .song-table td {
+        display: block;
+        padding: 0;
+        margin-bottom: var(--space-sm);
+        border: none;
+      }
+      
+      .song-table td:first-child {
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin-bottom: var(--space-xs);
+      }
+      
+      .song-artist {
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -51,53 +421,161 @@
   </header>
   
   <main id="main-content">
-    <section class="container" style="margin-top: var(--space-xl);">
+    <!-- Page Hero -->
+    <section class="songs-page-hero">
       <h1>Song List</h1>
-      <p style="font-size: 1.1rem; color: var(--color-text-secondary); margin-bottom: var(--space-lg);">
-        A searchable repertoire of piano and acoustic guitar songs.
-      </p>
+      <p>A searchable collection of songs currently in my live repertoire. Browse by artist, instrument, decade, or style.</p>
     </section>
     
-    <section class="container">
-      <div style="margin-bottom: var(--space-xl);">
-        <label for="song-search" style="display: block; margin-bottom: var(--space-md); font-weight: 600;">🔍 Search</label>
-        <input 
-          type="text" 
-          id="song-search" 
-          placeholder="Search by song title or artist..." 
-          style="font-size: 1rem;"
+    <!-- Search & Filter Panel -->
+    <section class="songs-filter-section">
+      <!-- Search Input -->
+      <div class="songs-search-input-group">
+        <label for="song-search">Search Songs</label>
+        <input
+          type="text"
+          id="song-search"
+          class="songs-search-input"
+          placeholder="Search by song title or artist..."
+          aria-label="Search songs"
         >
       </div>
       
-      <div class="song-list-section">
-        <div id="filter-checkboxes"></div>
+      <!-- Filter Groups -->
+      <div class="songs-filters-container">
+        <!-- Instrument Filters -->
+        <div class="songs-filter-group">
+          <span class="songs-filter-group-label">Instrument</span>
+          <div class="songs-filter-chips" id="instrument-filters"></div>
+        </div>
         
+        <!-- Decade Filters -->
+        <div class="songs-filter-group">
+          <span class="songs-filter-group-label">Decade</span>
+          <div class="songs-filter-chips" id="decade-filters"></div>
+        </div>
+        
+        <!-- Style Filters -->
+        <div class="songs-filter-group">
+          <span class="songs-filter-group-label">Style</span>
+          <div class="songs-filter-chips" id="style-filters"></div>
+        </div>
+      </div>
+      
+      <!-- Clear Filters Button -->
+      <button class="songs-clear-filters" id="clear-filters-btn" style="display: none;">
+        Clear Filters
+      </button>
+    </section>
+    
+    <!-- Results Section -->
+    <section class="songs-results-section">
+      <!-- Results Counter -->
+      <div class="songs-results-counter">
+        <span id="results-count">Loading...</span>
+      </div>
+      
+      <!-- Song List -->
+      <div id="song-list-container">
         <table class="song-table">
           <thead>
             <tr>
-              <th>Title</th>
+              <th>Song</th>
               <th>Artist</th>
-              <th>Instruments</th>
+              <th>Instrument</th>
               <th>Decade</th>
-              <th>Tags</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="song-table-body">
             <!-- Populated by songs.js -->
           </tbody>
         </table>
       </div>
+      
+      <!-- Empty State -->
+      <div id="empty-state" style="display: none;">
+        <div class="songs-empty-state">
+          <div class="songs-empty-state-icon">♪</div>
+          <h3>No songs found.</h3>
+          <p>Try changing your search or clearing a few filters.</p>
+          <button class="btn btn-secondary" id="empty-state-clear-btn">Clear Filters</button>
+        </div>
+      </div>
     </section>
     
-    <section class="container" style="background-color: rgba(212, 165, 116, 0.05); padding: var(--spacing-xl) var(--spacing-lg); border-radius: var(--border-radius); margin: 0 var(--spacing-lg);">
+    <!-- About This List Section -->
+    <section class="songs-about-section">
       <h2>About This List</h2>
       <p>
-        This repertoire represents songs Devin is prepared to perform. The list evolves over time as new songs are added and refined.
+        This is the repertoire I'm currently prepared to perform live, and it continues to grow as new songs are added and refined.
       </p>
-      <p style="margin-top: var(--spacing-md);">
-        <strong>Special Requests:</strong> Have a song in mind that's not on this list? Discuss special arrangements during booking. Some requests can be learned in advance of your event.
+      <p>
+        Have a special request? If there's a particular song you'd like for your event, ask during booking. Depending on the song and timeline, I may be able to prepare it in advance.
       </p>
-      <p style="margin-top: var(--spacing-md);">
+    </section>
+    
+    <!-- Booking CTA Section -->
+    <section class="songs-booking-section">
+      <h2>Looking for Live Music?</h2>
+      <p>
+        From relaxed background music to familiar sing-alongs, the set can be shaped around the room, audience, and event.
+      </p>
+      <div class="songs-booking-cta">
+        <a href="hire-devin.html" class="btn btn-primary">Explore Booking Options →</a>
+      </div>
+      <p style="margin-top: var(--space-lg); font-size: var(--font-size-sm);">
+        <a href="shows.html" style="text-decoration: underline;">See Upcoming Shows →</a>
+      </p>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Devin Frank Live</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="field-notes/">Field Notes</a></li>
+            <li><a href="gear.html">Gear</a></li>
+            <li><a href="shows.html">Shows</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>About</h3>
+          <ul>
+            <li><a href="about.html">About Devin</a></li>
+            <li><a href="songs.html">Song List</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="disclosures.html">Disclosures</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Booking</h3>
+          <ul>
+            <li><a href="hire-devin.html">Hire Devin</a></li>
+            <li><a href="restaurants-wineries.html">Restaurants & Wineries</a></li>
+            <li><a href="weddings.html">Weddings</a></li>
+            <li><a href="churches.html">Churches</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>More</h3>
+          <ul>
+            <li><a href="field-notes/">Subscribe to Field Notes</a></li>
+            <li><a href="disclosures.html">Disclosures & Privacy</a></li>
+            <li>Email: <a href="mailto:mockingbirddevin@gmail.com">mockingbirddevin@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Devin Frank Live. All rights reserved.</div>
+      </div>
+      <div class="footer-credit">
+        <p style="color: var(--color-text-secondary); font-size: 0.85rem;">Operated by <a href="#" style="color: var(--color-text-secondary);">Frank Creations LLC</a></p>
+      </div>
+    </div>
+  </footer>
         <strong>Status Indicators:</strong> "Solo Ready" means the song is currently available. Other status options indicate the song is in development or available by arrangement.
       </p>
     </section>
