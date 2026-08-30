@@ -1504,7 +1504,7 @@ footer {
 }
 
 .service-area-section {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-2xl) 0 var(--space-lg) 0;
 }
 
 .service-area-section p {
@@ -1516,7 +1516,7 @@ footer {
 
 .final-cta-section {
   background-color: var(--color-bg-secondary);
-  padding: var(--space-2xl) 0;
+  padding: var(--space-xl) 0 var(--space-2xl) 0;
 }
 
 .final-cta-box {
