@@ -31,9 +31,9 @@
   <style>
     /* Shared Hero Container */
     .article-hero-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 3.25rem;
+      width: min(100% - 48px, 960px);
+      margin-inline: auto;
+      padding: 0;
     }
 
     /* Article Header Styling */
@@ -133,9 +133,9 @@
 
     /* Article Body Content */
     .article-body-content {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 3.25rem;
+      width: min(100% - 48px, 760px);
+      margin-inline: auto;
+      padding: 0;
       line-height: 1.8;
     }
 
@@ -234,10 +234,6 @@
 
     /* Mobile Responsive Styles */
     @media (max-width: 768px) {
-      .article-hero-container {
-        padding: 0 1.5rem;
-      }
-
       .article-header {
         margin-bottom: 2.5rem;
       }
@@ -277,7 +273,7 @@
       }
 
       .article-body-content {
-        padding: 0 1.5rem;
+        /* width already responsive via min() function */
       }
 
       .article-body-content p {
@@ -291,10 +287,6 @@
     }
 
     @media (max-width: 425px) {
-      .article-hero-container {
-        padding: 0 1.125rem;
-      }
-
       .article-header {
         margin-bottom: 2rem;
       }
@@ -329,7 +321,7 @@
       }
 
       .article-body-content {
-        padding: 0 1.125rem;
+        /* width already responsive via min() function */
       }
 
       .article-body-content p {
