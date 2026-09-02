@@ -4,6 +4,38 @@
 
 const articles = [
   {
+    id: "your-setlist-shouldnt-survive-the-audience",
+    slug: "your-setlist-shouldnt-survive-the-audience",
+    title: "Your Setlist Shouldn't Survive the Audience",
+    excerpt: "Why a setlist should be a starting point—not a script—and how requests, crowd reactions, repertoire depth, and a willingness to change direction can make every show feel different.",
+    description: "Why the best live setlists change with the room. Devin Frank shares lessons on requests, reading the audience, building a flexible repertoire, and making every show worth coming back to.",
+    category: "Live Performance",
+    subcategories: ["Performing", "Audience Engagement", "Professional Development"],
+    featured_image: "/images/articles/your-setlist-shouldnt-survive-the-audience.png",
+    featured_image_alt: "Live performance with piano and audience interaction in an intimate venue.",
+    author: "Devin Frank",
+    publication_date: "2026-09-02",
+    updated_date: null,
+    reading_time: 8,
+    keywords: [
+      "live music",
+      "setlist",
+      "performing",
+      "audience engagement",
+      "repertoire",
+      "song requests",
+      "reading the room",
+      "live performance",
+      "cover songs",
+      "professional musician",
+      "flexible setlist",
+      "audience interaction"
+    ],
+    related_gear: [],
+    related_articles: [],
+    preview_html: "/field-notes/your-setlist-shouldnt-survive-the-audience.html"
+  },
+  {
     id: "what-venues-actually-want",
     slug: "what-venues-actually-want",
     title: "What Venues Actually Want From Musicians",
