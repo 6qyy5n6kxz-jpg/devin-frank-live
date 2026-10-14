@@ -4,6 +4,26 @@
 
 const articles = [
   {
+    id: "ev-evolve-50m-review",
+    slug: "ev-evolve-50m-review",
+    title: "EVOLVE 50M Review: The PA I Keep Taking to Gigs",
+    excerpt: "After more than two years using one EVOLVE 50M for wine cafés, outdoor events and everything between, here's why it stays in my rig.",
+    description: "My real-world EVOLVE 50M review after two-plus years of gigs: coverage, sound quality, portability, built-in mixing, and who should buy it.",
+    category: "Gear & Technology",
+    subcategories: ["Sound & Production", "PA Speakers", "Gear Reviews"],
+    featured_image: "/images/gear/evolve-50m.png",
+    featured_image_alt: "Electro-Voice EVOLVE 50M column PA speaker",
+    author: "Devin Frank",
+    publication_date: "2026-10-14",
+    updated_date: null,
+    reading_time: 8,
+    keywords: ["EVOLVE 50M review", "Electro-Voice", "column PA", "portable PA", "solo musician", "acoustic duo", "live sound"],
+    related_gear: ["ev-evolve-50m", "allen-heath-cq-20b"],
+    related_articles: ["what-venues-actually-want", "your-setlist-shouldnt-survive-the-audience"],
+    preview_html: "/field-notes/ev-evolve-50m-review.html"
+  },
+
+  {
     id: "your-setlist-shouldnt-survive-the-audience",
     slug: "your-setlist-shouldnt-survive-the-audience",
     title: "Your Setlist Shouldn't Survive the Audience",
