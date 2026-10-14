@@ -31,7 +31,7 @@ const articles = [
     description: "Why the best live setlists change with the room. Devin Frank shares lessons on requests, reading the audience, building a flexible repertoire, and making every show worth coming back to.",
     category: "Live Performance",
     subcategories: ["Performing", "Audience Engagement", "Professional Development"],
-    featured_image: "/images/articles/your-setlist-shouldnt-survive-the-audience.png",
+    featured_image: "/images/articles/what-venues-actually-want-from-musicians.png",
     featured_image_alt: "Live performance with piano and audience interaction in an intimate venue.",
     author: "Devin Frank",
     publication_date: "2026-09-02",
