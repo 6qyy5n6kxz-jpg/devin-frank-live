@@ -515,15 +515,38 @@
   
   <script src="js/main.js"></script>
   <script>
+    const CRM_INTAKE_URL = "https://krgvotkqeguvfiowammp.supabase.co/functions/v1/ingest-crm-lead";
+
+    // Copies a submitted inquiry into the Command Center Leads list. Formspree still sends the email;
+    // if this copy fails, the visitor's submission is unaffected.
+    function sendLeadToCommandCenter(source, formData) {
+      try {
+        const payload = {};
+        formData.forEach((value, key) => {
+          if (typeof value !== "string" || (key.startsWith("_") && key !== "_gotcha")) return;
+          payload[key] = key in payload ? [].concat(payload[key], value) : value;
+        });
+        const id = window.crypto?.randomUUID ? window.crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+        fetch(CRM_INTAKE_URL, {
+          method: "POST",
+          keepalive: true,
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify({ source, source_submission_id: `${source}:${id}`, submitted_at: new Date().toISOString(), payload })
+        }).catch(() => {});
+      } catch {
+        // Never block the visitor's submission.
+      }
+    }
+
     // Handle form submission feedback
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('booking-form');
       const feedbackDiv = document.getElementById('form-feedback');
       
       if (form) {
-        form.addEventListener('submit', function(e) {
-          // Formspree handles the actual submission
-          // We can add client-side validation here if needed
+        form.addEventListener('submit', function() {
+          // Formspree handles the actual submission and email; this keeps a copy in Leads.
+          sendLeadToCommandCenter('devin_frank_live_website', new FormData(form));
         });
       }
     });
