@@ -206,7 +206,7 @@
     </section>
     
     <!-- Newsletter Signup -->
-    <section class="section-dark" style="padding: var(--space-2xl) var(--space-lg); margin-bottom: var(--space-2xl);">
+    <section id="newsletter-signup" class="section-dark" style="padding: var(--space-2xl) var(--space-lg); margin-bottom: var(--space-2xl);">
       <div class="container">
         <div style="max-width: 700px; margin: 0 auto; text-align: center;">
           <h2 style="color: var(--color-text-inverse); margin-bottom: var(--space-md);">Follow the Journey</h2>
@@ -232,6 +232,7 @@
               <label for="newsletter-consent" style="color: #F4F0E8;">I'd like to receive emails about Field Notes and gigs. I can unsubscribe anytime.</label>
             </div>
             
+            <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label>Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
             <button type="submit" class="btn btn-primary" style="width: 100%; background-color: var(--color-accent-copper); border-color: var(--color-accent-copper);">Subscribe</button>
             
             <p id="newsletter-message" style="text-align: center; margin-top: var(--space-md); display: none; font-size: 0.85rem; color: var(--color-text-inverse);"></p>
@@ -366,35 +367,44 @@
       // This function is kept for reference but no longer used
     }
     
-    // Newsletter form handler
+    // Newsletter form handler: adds the subscriber to the Devin Frank Live list in the
+    // Frank Creations Command Center. They get an email to confirm before they're added.
     function initNewsletterForm() {
       const form = document.getElementById('newsletter-form');
       if (!form) return;
-      
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const email = document.getElementById('newsletter-email').value;
-        const name = document.getElementById('newsletter-name').value;
-        const messageEl = document.getElementById('newsletter-message');
-        
-        // NOTE: This form is not yet connected to an email service.
-        // To activate, connect to Mailchimp, ConvertKit, or another provider.
-        // For now, prevent submission to avoid false success messages.
-        messageEl.textContent = 'Newsletter signup will be active soon. In the meantime, email mockingbirddevin@gmail.com to join the mailing list.';
+      const button = form.querySelector('button[type="submit"]');
+      const messageEl = document.getElementById('newsletter-message');
+      const show = (text, isError) => {
+        messageEl.textContent = text;
         messageEl.style.display = 'block';
-        messageEl.style.color = 'var(--color-text-secondary)';
-        
-        // Do not clear form - let user copy their email if needed
-        // Do not submit anywhere
-        
-        // Hide message after 7 seconds
-        setTimeout(() => {
-          messageEl.style.display = 'none';
-        }, 7000);
+        messageEl.style.color = isError ? '#FCA5A5' : 'var(--color-text-inverse)';
+      };
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!window.FrankNewsletter) {
+          show('Signup is still loading. Please try again in a moment.', true);
+          return;
+        }
+        button.disabled = true;
+        button.textContent = 'Subscribing…';
+        try {
+          const result = await window.FrankNewsletter.subscribe({
+            list: 'devin-frank-live',
+            email: document.getElementById('newsletter-email').value.trim(),
+            _gotcha: form.querySelector('[name="_gotcha"]').value,
+          });
+          show(result.message || "You're signed up. Thanks!");
+          form.reset();
+        } catch (error) {
+          show(error.message || 'Signup is unavailable right now. Please try again later.', true);
+        } finally {
+          button.disabled = false;
+          button.textContent = 'Subscribe';
+        }
       });
     }
-    
+
     // Render a preview of upcoming events on homepage
     function renderEventPreview() {
       if (typeof events === 'undefined' || events.length === 0) {
@@ -455,5 +465,6 @@
   </script>
   
   <script src="js/main.js"></script>
+  <script src="https://frank-creations-booking-center.vercel.app/newsletter-signup.js" defer></script>
 </body>
 </html>
