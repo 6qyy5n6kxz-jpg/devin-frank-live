@@ -4,6 +4,26 @@
 
 const articles = [
   {
+    id: "allen-heath-cq-20b-virtual-soundcheck-review",
+    slug: "allen-heath-cq-20b-virtual-soundcheck-review",
+    title: "Allen & Heath CQ-20B Review: The Virtual Soundcheck Feature That Changed My Workflow",
+    excerpt: "How SD-card multitrack playback changed my soundcheck—and why a wireless-control failure reminded me to bring a backup mixer.",
+    description: "How I use the Allen & Heath CQ-20B's SD-card multitrack recording for virtual soundcheck, plus the wireless-control failure that taught me to carry a backup.",
+    category: "Gear & Technology",
+    subcategories: ["Sound & Production", "Mixers", "Gear Reviews"],
+    featured_image: "/images/gear/cq-20b.png",
+    featured_image_alt: "Allen & Heath CQ-20B digital mixer",
+    author: "Devin Frank",
+    publication_date: "2026-11-02",
+    updated_date: null,
+    reading_time: 8,
+    keywords: ["Allen & Heath CQ-20B review", "virtual soundcheck", "SD card multitrack recording", "digital mixer", "live sound"],
+    related_gear: ["allen-heath-cq-20b"],
+    related_articles: ["ev-evolve-50m-review"],
+    preview_html: "/field-notes/allen-heath-cq-20b-virtual-soundcheck-review.html"
+  },
+
+  {
     id: "ev-evolve-50m-review",
     slug: "ev-evolve-50m-review",
     title: "EVOLVE 50M Review: The PA I Keep Taking to Gigs",
