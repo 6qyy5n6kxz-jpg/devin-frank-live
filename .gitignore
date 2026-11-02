@@ -28,3 +28,11 @@ coverage/
 # Logs
 logs/
 *.log
+
+# Cloudflare Wrangler local files
+.wrangler/
+._.wrangler
+
+# macOS metadata files
+.DS_Store
+._*
