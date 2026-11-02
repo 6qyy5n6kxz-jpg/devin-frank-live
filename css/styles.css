@@ -2119,6 +2119,153 @@ section[style*="padding: var(--space-2xl)"] .container {
   }
 }
 
+/* Article Header & Layout Refinements */
+
+/* Article header internal padding for breathing room */
+.article-header {
+  padding: 32px 48px 36px;
+  background-color: rgba(244, 240, 232, 0.5);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: 3.5rem;
+}
+
+.article-hero-container .article-header {
+  background-color: rgba(244, 240, 232, 0.5);
+  border-radius: var(--border-radius-lg);
+  padding: 32px 48px 36px;
+}
+
+/* Breadcrumb alignment - align with article hero container left edge */
+.breadcrumbs {
+  width: min(100% - 48px, 960px);
+  margin-inline: auto;
+  padding: 1rem 0;
+  background: transparent;
+}
+
+.breadcrumbs .container {
+  padding-inline: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.breadcrumbs ol {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.breadcrumbs a {
+  color: var(--color-accent-copper);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* Follow the Journey CTA Section */
+.follow-journey-section {
+  background: rgba(212, 165, 116, 0.05);
+  padding: 56px 32px 48px;
+  border-radius: var(--border-radius);
+  margin: 56px var(--space-lg);
+  width: auto;
+}
+
+.follow-journey-inner {
+  max-width: 700px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.follow-journey-section h2 {
+  margin-bottom: 16px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.follow-journey-section p {
+  max-width: 620px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.follow-journey-section .btn {
+  display: inline-flex;
+  margin-inline: auto;
+}
+
+/* Responsive Article Header & CTA */
+@media (max-width: 768px) {
+  .article-header {
+    padding: 28px 28px 32px;
+  }
+  
+  .article-hero-container .article-header {
+    padding: 28px 28px 32px;
+  }
+  
+  .breadcrumbs {
+    width: min(100% - 56px, 960px);
+    padding: 1rem 0;
+  }
+  
+  .follow-journey-section {
+    padding: 48px 24px 40px;
+    margin: 48px var(--space-md);
+  }
+  
+  .follow-journey-section p {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-header {
+    padding: 24px 20px 28px;
+  }
+  
+  .article-hero-container .article-header {
+    padding: 24px 20px 28px;
+  }
+  
+  .breadcrumbs {
+    width: min(100% - 40px, 960px);
+    padding: 0.75rem 0;
+  }
+  
+  .breadcrumbs ol {
+    font-size: 0.85rem;
+  }
+  
+  .follow-journey-section {
+    padding: 40px 20px 32px;
+    margin: 40px var(--space-sm);
+  }
+  
+  .follow-journey-section h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: 12px;
+  }
+  
+  .follow-journey-section p {
+    max-width: 100%;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+  
+  .follow-journey-section .btn {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 0.95rem;
+  }
+}
+
 /* Print Styles */
 @media print {
   header,
